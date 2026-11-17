@@ -1,0 +1,17 @@
+<Project>
+    <!-- https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management -->
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <!-- Nightly build from https://nuget-feed-nightly.avaloniaui.net (see NuGet.Config). Latest stable on nuget.org: 12.1.6 -->
+        <AvaloniaVersion>12.2.999-cibuild0101409-alpha</AvaloniaVersion>
+        <!-- NU1507: Warning when there are multiple package sources when using CPM with no source mapping -->
+        <NoWarn>$(NoWarn);NU1507</NoWarn>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageVersion Include="Avalonia" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia.Browser" Version="$(AvaloniaVersion)" />
+    </ItemGroup>
+</Project>

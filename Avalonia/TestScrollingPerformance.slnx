@@ -1,0 +1,5 @@
+﻿<Solution>
+  <Project Path="TestScrollingPerformance.Browser/TestScrollingPerformance.Browser.csproj" />
+  <Project Path="TestScrollingPerformance.Desktop/TestScrollingPerformance.Desktop.csproj" />
+  <Project Path="TestScrollingPerformance/TestScrollingPerformance.csproj" />
+</Solution>
