@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net11.0-windows</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="OpenSilver.Simulator" Version="3.4.0-preview-2026-11-17-153412-526ff1ab" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestScrollingPerformance\TestScrollingPerformance.csproj" />
+  </ItemGroup>
+</Project>
