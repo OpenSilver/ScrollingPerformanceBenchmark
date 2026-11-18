@@ -7,6 +7,10 @@
 
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Background="#FFECECEC">
+            <!-- Avalonia's ScrollViewer re-arranges its direct child on every scroll offset change, and TextBlock
+                 rebuilds its entire text layout on every arrange (~200 ms per frame for this text on WebAssembly).
+                 The Border is moved instead, so the TextBlock keeps the same arrange rect and is not re-laid out. -->
+            <Border>
             <TextBlock FontSize="14" TextWrapping="Wrap">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in suscipit magna. Maecenas vel quam ut quam bibendum posuere et ac tellus. Cras sagittis neque interdum sapien pellentesque, eget venenatis est luctus. Sed augue erat, lobortis id lobortis ac, rutrum vel ex. Sed non nisl facilisis, mollis est ut, ornare ex. Sed tempus, nunc sed elementum tempus, tortor ex facilisis nisi, a tempor odio risus nec arcu. Pellentesque at nisi maximus, tristique elit eget, placerat diam. Praesent sodales convallis maximus. Sed aliquam vulputate egestas. In pharetra, ipsum sed consequat tempor, lorem tortor sodales tortor, in scelerisque augue nibh ultricies libero. Phasellus laoreet, erat non tincidunt placerat, massa nibh rhoncus velit, nec luctus lacus odio a augue. Praesent pulvinar felis et vehicula hendrerit. Praesent eleifend gravida mi quis rutrum. Vestibulum in massa et nisi aliquet mollis eu sed nulla. Sed id tincidunt metus. Suspendisse ac turpis non ante luctus laoreet interdum quis sem.
 <LineBreak/><LineBreak/>
@@ -110,6 +114,7 @@ Nulla facilisi. In ac tempor tellus, quis laoreet urna. Aenean mollis ante vitae
 <LineBreak/><LineBreak/>
 Generated 50 paragraphs, 4645 words, 31270 bytes of Lorem Ipsum
             </TextBlock>
+            </Border>
         </ScrollViewer>
     </Grid>
 </UserControl>
