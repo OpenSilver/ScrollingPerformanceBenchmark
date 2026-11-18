@@ -25,4 +25,9 @@
     <ApplicationDefinition Include="App.xaml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\**" />
+    <Resource Include="Assets\**" />
+  </ItemGroup>
+
 </Project>

@@ -1,120 +1,942 @@
-﻿<UserControl xmlns="https://github.com/avaloniaui"
+<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="TestScrollingPerformance.Views.MainView">
+             x:Class="TestScrollingPerformance.Views.MainView"
+             Foreground="#FF2B2F36">
 
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Background="#FFECECEC">
-            <!-- Avalonia's ScrollViewer re-arranges its direct child on every scroll offset change, and TextBlock
-                 rebuilds its entire text layout on every arrange (~200 ms per frame for this text on WebAssembly).
-                 The Border is moved instead, so the TextBlock keeps the same arrange rect and is not re-laid out. -->
-            <Border>
-            <TextBlock FontSize="14" TextWrapping="Wrap">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in suscipit magna. Maecenas vel quam ut quam bibendum posuere et ac tellus. Cras sagittis neque interdum sapien pellentesque, eget venenatis est luctus. Sed augue erat, lobortis id lobortis ac, rutrum vel ex. Sed non nisl facilisis, mollis est ut, ornare ex. Sed tempus, nunc sed elementum tempus, tortor ex facilisis nisi, a tempor odio risus nec arcu. Pellentesque at nisi maximus, tristique elit eget, placerat diam. Praesent sodales convallis maximus. Sed aliquam vulputate egestas. In pharetra, ipsum sed consequat tempor, lorem tortor sodales tortor, in scelerisque augue nibh ultricies libero. Phasellus laoreet, erat non tincidunt placerat, massa nibh rhoncus velit, nec luctus lacus odio a augue. Praesent pulvinar felis et vehicula hendrerit. Praesent eleifend gravida mi quis rutrum. Vestibulum in massa et nisi aliquet mollis eu sed nulla. Sed id tincidunt metus. Suspendisse ac turpis non ante luctus laoreet interdum quis sem.
-<LineBreak/><LineBreak/>
-Nam finibus, est sed tincidunt faucibus, lectus dui congue urna, vel bibendum sem mauris vel eros. Aenean placerat eleifend nibh a commodo. Fusce nec mattis orci. Nam ac pharetra lacus. Suspendisse a nunc vitae elit ullamcorper efficitur. Duis mattis magna velit. Nullam quis turpis quis lacus fermentum tristique eu sed ex. Maecenas tincidunt ligula in lorem viverra, sit amet fringilla magna ornare. Ut pulvinar sit amet libero vitae rhoncus. In eget orci nec quam pulvinar pulvinar sit amet ac sapien. Donec ut sapien finibus, sagittis sapien nec, tempus lacus.
-<LineBreak/><LineBreak/>
-Nam pulvinar, mi eu congue rhoncus, lectus magna mollis lectus, eu commodo ipsum diam id neque. Sed malesuada eros sit amet lobortis dictum. Maecenas tincidunt finibus enim, quis laoreet felis tempor non. Mauris sit amet urna diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec euismod leo ac euismod bibendum. Vivamus a molestie sapien. Pellentesque non mollis metus. Proin et felis vel turpis cursus congue sed quis velit.
-<LineBreak/><LineBreak/>
-Quisque pulvinar sagittis ex, nec hendrerit justo aliquam a. Maecenas malesuada ipsum vel ex molestie, id faucibus quam blandit. Nullam iaculis maximus ligula ac tempus. Phasellus ut magna eget nulla faucibus congue vel sed mauris. Donec euismod mauris in elit porttitor, ut iaculis nisl mollis. Donec ullamcorper, est eget tincidunt iaculis, urna eros suscipit tortor, ut luctus est nunc et dui. Phasellus mollis urna ac ante molestie dictum. Pellentesque viverra venenatis dictum. Aliquam eu lectus eget libero faucibus ornare vitae quis elit.
-<LineBreak/><LineBreak/>
-Ut vitae imperdiet mi. Cras dictum elit vel condimentum accumsan. Vivamus id neque eget arcu bibendum posuere id nec lorem. Morbi eros orci, congue non lacinia id, euismod non lorem. In sit amet felis malesuada diam lobortis tempor et tempus diam. Aenean ut metus turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris suscipit orci auctor purus bibendum rhoncus. Mauris in placerat leo, sit amet molestie ligula.
-<LineBreak/><LineBreak/>
-Nunc blandit vel sapien et placerat. Donec in tortor nec sem lobortis elementum. Suspendisse congue gravida molestie. Quisque sit amet semper quam, vitae varius felis. Aliquam in ipsum tempus, mollis nibh vitae, sodales mauris. Vivamus at egestas nisi, a consectetur elit. Nullam id ligula faucibus, ullamcorper eros vitae, vestibulum ante. Morbi rutrum augue sit amet massa varius, non congue lectus condimentum. Aenean elit metus, ultrices accumsan laoreet eu, tempor quis orci. Phasellus consectetur eget massa et volutpat. In accumsan ante et molestie egestas. Morbi ut justo iaculis, efficitur dolor viverra, suscipit lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-<LineBreak/><LineBreak/>
-Fusce in lacus quis ipsum scelerisque fringilla eget eget neque. Etiam dictum, ipsum et rutrum luctus, mauris massa mattis tortor, nec mollis ligula odio et metus. Vestibulum eget dignissim orci. Etiam fermentum urna leo, in posuere nibh bibendum at. Suspendisse potenti. Suspendisse lobortis sapien in leo fermentum aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-<LineBreak/><LineBreak/>
-Aenean augue enim, hendrerit non lorem nec, blandit luctus nunc. Nulla pretium erat at nulla feugiat tristique. Nam auctor et augue vitae auctor. Nam sodales cursus justo sit amet viverra. Fusce condimentum, ligula et maximus dapibus, tellus diam tempor orci, at viverra mauris elit nec dui. Praesent sodales nulla sed ipsum feugiat, eget finibus velit pretium. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas consequat sagittis libero eu sollicitudin. Quisque sem tortor, consectetur at ullamcorper in, egestas et orci. Quisque ut velit vitae nisl eleifend porta finibus in elit. Mauris eros eros, sollicitudin quis finibus et, ultricies id neque.
-<LineBreak/><LineBreak/>
-Donec quis aliquam nisi. Mauris lacinia tortor at augue suscipit, vitae blandit dolor suscipit. In hac habitasse platea dictumst. In imperdiet condimentum ipsum et iaculis. Maecenas lobortis sit amet turpis dignissim fringilla. Vestibulum quis nulla arcu. Nam eu sem nisl. Quisque dapibus lorem et tortor faucibus, ut scelerisque metus elementum. Donec pretium nulla id tristique convallis. Nullam ligula erat, posuere vel posuere id, scelerisque sit amet est. Cras malesuada lectus a mauris efficitur mollis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed tincidunt dignissim lectus at condimentum.
-<LineBreak/><LineBreak/>
-Vestibulum ac turpis egestas, vestibulum nibh a, tristique magna. Aliquam lobortis placerat nulla et tincidunt. Nullam tristique lacinia lectus id fermentum. Ut imperdiet felis sit amet ultricies sodales. Integer nec tortor interdum, vestibulum urna sit amet, sodales odio. Nam semper eleifend luctus. Sed nunc ante, viverra in felis placerat, egestas fermentum elit. Ut id tempus diam. Aenean suscipit urna ac enim ullamcorper congue. Sed ut placerat sem, et dignissim lacus. Curabitur condimentum felis ac purus imperdiet sodales. In hac habitasse platea dictumst. Proin non orci tincidunt, mattis augue non, blandit enim.
-<LineBreak/><LineBreak/>
-Nullam in nulla vitae metus rhoncus tristique sit amet id orci. Donec lacinia dapibus nunc quis hendrerit. Nunc lacinia fermentum felis, congue dictum diam varius eget. Etiam nec dignissim lacus, in sollicitudin tellus. Cras convallis vulputate arcu rhoncus commodo. Phasellus sit amet lorem eu neque posuere ullamcorper non ac neque. Suspendisse potenti. Aliquam sollicitudin lacus magna, vel rutrum erat rhoncus nec. Donec vitae mauris nec erat ultricies congue non a arcu. Cras id vulputate metus. Sed suscipit et augue et ornare. Aliquam iaculis est ac mollis semper.
-<LineBreak/><LineBreak/>
-Curabitur rhoncus elementum eros in tincidunt. Curabitur et ultricies dolor. Sed rutrum eu eros eu ultrices. Curabitur egestas pharetra dui vel consectetur. Mauris id congue metus, non viverra augue. Vivamus dictum leo nec risus tempus, id tempus nisi vehicula. Aenean lobortis, est nec euismod convallis, dui nunc sagittis turpis, et luctus tortor purus consectetur velit. Nullam dignissim libero in ligula laoreet dictum. Nulla facilisi. Aenean massa lorem, pulvinar at enim aliquam, consequat dignissim leo. Pellentesque arcu ante, malesuada ac orci sed, maximus malesuada enim. Nunc pulvinar sem quis ligula suscipit tincidunt. Proin finibus odio ut turpis tincidunt, in tristique orci facilisis.
-<LineBreak/><LineBreak/>
-Nulla et tortor aliquet, interdum turpis id, aliquet sapien. Morbi facilisis dignissim justo, in egestas lorem volutpat ut. Nullam molestie urna id arcu eleifend, quis cursus ante aliquet. Suspendisse euismod nisl augue, ac aliquet sapien viverra non. Fusce condimentum urna eget mauris maximus porta. Suspendisse porta erat iaculis nulla congue, laoreet auctor turpis fermentum. In tempor varius ipsum ac mollis. Nam semper non tellus et ultricies. Vivamus non tellus dui. Maecenas nec tincidunt urna. Praesent varius facilisis dolor nec placerat. Nulla sagittis nisi orci, ac vestibulum ligula euismod at. Quisque placerat, turpis et euismod tincidunt, leo dui pellentesque tellus, ac faucibus mi ipsum sed eros. Praesent magna tellus, malesuada in orci vitae, dignissim aliquam diam. Ut tristique eget augue et dapibus.
-<LineBreak/><LineBreak/>
-Nam vitae sagittis nisi, non pellentesque arcu. Nunc feugiat ligula sit amet pellentesque tempus. Suspendisse tincidunt vulputate rhoncus. Proin justo mauris, iaculis eget risus id, venenatis porttitor lacus. Curabitur a consequat purus. Donec aliquam rhoncus egestas. Mauris in erat eget erat aliquam pharetra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Proin dolor mauris, sodales a sollicitudin tincidunt, fringilla vel lacus. In ut risus ac urna tempor imperdiet fringilla id turpis. Nunc in augue ut arcu sollicitudin porttitor. In eu libero pharetra, molestie dui non, semper nulla. Mauris elementum tellus eros, et tincidunt augue suscipit in. Aliquam laoreet felis dolor, et viverra enim tincidunt et. Fusce mattis, turpis varius pellentesque luctus, justo ex rhoncus erat, faucibus elementum ante turpis ac justo.
-<LineBreak/><LineBreak/>
-Maecenas sodales turpis massa, ut interdum eros feugiat nec. Cras augue sapien, sagittis a tempor ut, finibus ac purus. Vivamus vulputate elit sed metus imperdiet pharetra vitae vitae est. Vestibulum urna metus, euismod at interdum id, convallis non magna. Nunc vel purus sed mauris tristique viverra. Sed semper, libero vel dapibus dignissim, felis ligula elementum quam, quis fermentum elit arcu a justo. Nam tristique, nulla id laoreet molestie, ipsum metus placerat tellus, vel imperdiet nunc sem a metus. Pellentesque non semper magna, ut dapibus elit. Suspendisse id finibus augue. Quisque at risus at metus bibendum porta condimentum scelerisque mi. Aliquam porta nisi pulvinar nisi finibus ultricies. Fusce ullamcorper vestibulum magna, eget cursus nibh vehicula quis. Curabitur egestas eros porttitor, accumsan dui eu, dapibus lacus. Nulla et malesuada ex, ac sollicitudin nulla. Maecenas pharetra bibendum lacinia. Donec quis gravida nisl.
-<LineBreak/><LineBreak/>
-Maecenas mauris enim, scelerisque vel libero in, maximus pretium est. Cras eget tortor mauris. Phasellus egestas vel nulla non lacinia. Fusce congue augue in ante sagittis egestas. Aliquam erat volutpat. Suspendisse facilisis sit amet nunc in varius. Aliquam erat volutpat. Fusce ut lorem libero. Proin enim leo, condimentum nec condimentum sit amet, sagittis id lectus. Suspendisse venenatis dui a egestas viverra. Praesent vestibulum vestibulum euismod. Sed sagittis erat sed risus pellentesque, in semper lacus malesuada. In aliquet elementum luctus. Curabitur semper ex rutrum quam blandit, nec consectetur felis elementum.
-<LineBreak/><LineBreak/>
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis venenatis eleifend augue, sed tincidunt velit iaculis et. Mauris magna purus, ullamcorper a est et, mattis malesuada arcu. In eleifend nulla dignissim lectus iaculis bibendum. Fusce tempus mauris vitae urna commodo tristique. Pellentesque tempor, nibh at ullamcorper placerat, justo nunc iaculis mi, efficitur fermentum lacus leo vitae leo. Nam nec sem ac lorem elementum luctus eu vel lectus. Aliquam gravida iaculis nibh vel ullamcorper. Vestibulum sed quam id quam commodo consectetur. Phasellus malesuada malesuada vehicula.
-<LineBreak/><LineBreak/>
-Etiam eget volutpat nulla, ut commodo eros. Etiam at urna tortor. Fusce porttitor justo lectus. Proin sed diam sed neque suscipit consectetur id et turpis. Integer volutpat mauris ipsum, a ullamcorper est bibendum nec. Aliquam dictum vestibulum diam vitae tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque congue rhoncus urna nec commodo. Nulla sed nibh aliquet, volutpat magna a, suscipit justo. Etiam quis libero accumsan ante venenatis porta. Vestibulum condimentum fermentum faucibus. Proin semper orci id tellus pharetra tempor.
-<LineBreak/><LineBreak/>
-Donec quis diam congue, efficitur diam ut, volutpat tortor. Donec aliquam eleifend finibus. Fusce a leo rhoncus, volutpat eros at, pharetra sapien. Sed ut lacinia sem. Cras sollicitudin maximus nibh non malesuada. Vivamus egestas velit venenatis, ultrices odio non, semper eros. Donec ac ex rutrum, accumsan arcu at, dignissim ligula. Praesent mattis augue vel porta tempus. Nunc varius tristique rutrum. Donec id turpis non erat lacinia condimentum. In sed leo non nibh aliquam accumsan. Aenean pretium placerat nulla, vel congue velit vehicula ac. Etiam sem felis, ultricies sed mollis ut, dictum in dui. Morbi fringilla nunc non lacinia posuere. Duis in mi eu lacus faucibus eleifend quis eu orci.
-<LineBreak/><LineBreak/>
-Quisque et dignissim dolor. Phasellus vitae justo fringilla, varius magna sit amet, ullamcorper risus. Fusce non tellus sit amet justo mattis egestas sed eget eros. In eu tellus lacus. Ut dui nunc, interdum at velit id, ornare pharetra risus. Donec non libero in dolor euismod finibus. Aliquam nibh massa, luctus eu congue eget, scelerisque at turpis. Cras viverra sapien odio, ut vestibulum massa molestie nec. Praesent iaculis, metus at porta aliquet, metus dui finibus odio, quis placerat elit massa eget risus. Duis hendrerit dui ac elit molestie, bibendum suscipit sem bibendum. Nam ut est dapibus, viverra neque at, scelerisque diam. Nulla pharetra dictum augue id venenatis. Praesent finibus ligula in quam aliquam, in porta libero ultrices. Quisque augue massa, condimentum nec molestie sit amet, pulvinar quis dolor. Curabitur tempus lorem malesuada erat dignissim faucibus.
-<LineBreak/><LineBreak/>
-Quisque consequat mi ut risus porttitor egestas. Praesent suscipit imperdiet turpis pretium ultrices. Aenean ligula nisi, hendrerit id posuere id, vestibulum ut mauris. Cras varius molestie sem, sit amet pretium tellus congue eget. Pellentesque id fringilla diam, in tincidunt nisi. Aenean interdum lorem risus, vel commodo nisi lobortis id. Aenean eget dapibus nisl, et posuere purus.
-<LineBreak/><LineBreak/>
-In quis felis vel eros lobortis commodo. Vivamus a risus lectus. Vestibulum non nisl interdum, bibendum est ut, lobortis odio. Mauris eu lacus lobortis ligula tristique interdum eu vehicula nibh. Sed sit amet feugiat turpis. Nullam convallis vel nisi quis volutpat. Integer tincidunt dui eget magna tempus, vitae consequat mauris rhoncus. Pellentesque vulputate sem in lectus tempus, quis aliquet velit sodales. Fusce tristique nec arcu sed porta. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam erat volutpat. Duis neque mi, cursus eu lectus in, pharetra dignissim urna. Curabitur commodo libero ut risus ullamcorper mollis.
-<LineBreak/><LineBreak/>
-Quisque vulputate nibh vehicula erat consectetur, sit amet lobortis lectus pellentesque. In ornare leo vel aliquam pharetra. Cras accumsan ex orci, quis gravida est viverra eu. Morbi luctus metus lacus, porta molestie odio vulputate id. Nunc sit amet ipsum a ex egestas rutrum sed id odio. Proin gravida tincidunt fringilla. Curabitur diam nunc, interdum nec semper et, venenatis sed eros.
-<LineBreak/><LineBreak/>
-Curabitur pulvinar arcu id sodales porta. Proin condimentum turpis in dui lacinia ullamcorper. Sed mollis sem mi, ac faucibus velit aliquam at. Curabitur feugiat vestibulum diam ac luctus. Donec at magna maximus erat bibendum semper. Sed vehicula massa nec neque feugiat convallis. Donec vehicula libero nec justo vestibulum congue. Ut elit dolor, consequat a arcu luctus, dignissim placerat neque. Nam sit amet ante tempus, mattis ante ut, aliquet eros. Etiam pellentesque pretium dolor, quis tristique neque varius sed.
-<LineBreak/><LineBreak/>
-Phasellus facilisis lorem non augue aliquam, quis pharetra dui tristique. In eget iaculis ipsum. Sed vel quam nunc. Duis egestas rhoncus rutrum. Cras lobortis arcu augue, in dapibus lectus ultrices sit amet. Morbi blandit dolor libero. In hac habitasse platea dictumst. Nullam ut augue mollis risus consectetur dignissim. Nam egestas tincidunt dictum. Integer urna mauris, dapibus ac luctus at, laoreet a libero. Duis nec elit id erat ultricies aliquam. Donec dictum, sem vitae bibendum volutpat, tortor nibh consequat massa, et aliquet est lacus ac lacus. Integer in erat et dolor rhoncus dignissim vitae sed eros.
-<LineBreak/><LineBreak/>
-Nullam pretium neque ut felis placerat suscipit. Nunc a nisi tempor, finibus erat quis, pulvinar nunc. Suspendisse a felis ornare, sodales magna id, convallis nibh. Etiam et euismod metus. Praesent lobortis feugiat lorem a condimentum. Curabitur consequat libero sollicitudin lorem porttitor gravida. Quisque euismod, erat a pharetra imperdiet, tellus lectus vestibulum nisi, in consectetur diam ex vel magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-<LineBreak/><LineBreak/>
-Morbi in ante eu est dictum euismod. Praesent feugiat dolor at lectus ornare accumsan. Duis a mattis ex. Quisque sed nisi ut turpis facilisis aliquet. Nulla scelerisque commodo iaculis. Sed ac condimentum lacus, at bibendum turpis. Fusce rutrum a massa maximus feugiat. Pellentesque luctus accumsan urna, id facilisis lorem. Maecenas porta lacinia semper. Aliquam hendrerit elit et egestas congue. Duis et gravida magna. Duis eros nulla, tincidunt eget convallis vel, porta a est. Nullam in vulputate mi. Cras venenatis, tortor sit amet ultricies tempus, ligula odio cursus augue, id elementum ante lacus sit amet massa. Nam sed dictum velit.
-<LineBreak/><LineBreak/>
-In blandit eros ligula, sed malesuada diam dapibus eget. Mauris sem metus, sodales malesuada purus vel, dapibus blandit ligula. Sed ac elementum enim, non convallis dui. Suspendisse placerat ut sapien sed ultricies. Vivamus sodales feugiat leo at malesuada. Cras sed ex in purus malesuada vestibulum. Aliquam erat volutpat. Praesent bibendum eros ut eros sodales sagittis. Morbi pulvinar feugiat lorem, imperdiet faucibus purus vehicula semper.
-<LineBreak/><LineBreak/>
-Maecenas ac tristique velit. Sed imperdiet risus consectetur, fermentum sem vitae, tempus arcu. Vestibulum quis dui nec risus sollicitudin tristique euismod nec elit. Vestibulum tempor eu ipsum id vestibulum. Quisque vulputate condimentum nibh, sit amet congue odio fringilla quis. Fusce consequat vel est non fringilla. Donec at maximus metus, at porttitor leo. Sed mauris orci, tristique sed lectus quis, porttitor lobortis mauris. Morbi rutrum, lectus sit amet tristique scelerisque, nulla metus cursus erat, sit amet dignissim quam metus vitae lorem. Sed semper orci ut dolor vehicula, in mattis magna rutrum. Maecenas finibus feugiat nibh, accumsan scelerisque dui viverra sed. Curabitur dapibus nibh mi, ut semper nisl tempor sed. Maecenas sed mattis odio, sed tincidunt neque.
-<LineBreak/><LineBreak/>
-Aliquam et ornare urna. Sed luctus nisl sit amet eleifend maximus. Praesent dapibus purus nec neque sagittis, eu convallis sapien tincidunt. Aenean tempus risus vitae consectetur convallis. Sed elementum tellus a turpis tempus tempus. Quisque id pellentesque elit. Maecenas in risus nibh. Curabitur pretium tristique nisi et suscipit. Sed eleifend mollis orci, et placerat nunc bibendum sed. Sed blandit tincidunt augue in placerat. Morbi ullamcorper eu ligula nec vulputate. Quisque bibendum egestas tincidunt. Nunc vitae ex id dui auctor vestibulum. Praesent libero lorem, facilisis a tempus vitae, egestas eget eros. Suspendisse sed luctus diam. Pellentesque posuere risus odio, vel volutpat lacus rutrum fermentum.
-<LineBreak/><LineBreak/>
-Proin suscipit fringilla lacus, nec rutrum ligula pharetra at. Vestibulum vel condimentum lorem, sit amet malesuada augue. Proin dictum ac erat ac dictum. Morbi lacinia purus ac erat dictum, eu blandit ex aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum semper justo nec consequat malesuada. Mauris purus arcu, dapibus eu nulla eu, eleifend lacinia elit. Cras tincidunt velit vitae nunc semper, ac vehicula erat condimentum. Proin elit ex, ullamcorper at elementum non, tristique id tortor. Ut id ante et nibh pulvinar venenatis.
-<LineBreak/><LineBreak/>
-Donec ullamcorper vel orci et auctor. Etiam rhoncus facilisis orci, at consequat leo scelerisque et. Cras blandit tincidunt leo consequat eleifend. Suspendisse molestie porta metus non fringilla. Vivamus sit amet nulla ligula. Suspendisse eget felis ex. Ut nisi augue, sagittis eget consequat et, faucibus nec elit. Mauris tincidunt ac turpis id rutrum. Nam id posuere mauris, in eleifend tellus. Pellentesque nec interdum lorem. Sed sodales sapien nec velit porta, vel euismod dolor tempor. Nullam elementum, ante sit amet sollicitudin fermentum, diam lacus luctus neque, sit amet semper ante justo pellentesque est. Nam ac euismod ante, ac cursus orci. Sed gravida eros mi. Nullam suscipit leo mattis nibh eleifend porttitor. Sed eu velit lectus.
-<LineBreak/><LineBreak/>
-Maecenas eget augue euismod, convallis lacus in, condimentum ante. Fusce luctus viverra ultrices. Curabitur vitae pretium urna, sit amet tincidunt turpis. Fusce metus sem, vestibulum id fringilla sit amet, porttitor ac ligula. Sed quis ante efficitur, ullamcorper nunc ultricies, tincidunt ex. Nulla lobortis erat eget pretium commodo. Cras scelerisque eros eu hendrerit posuere. Ut ornare quis ligula id tincidunt. Phasellus felis lectus, scelerisque sed dolor vitae, elementum lobortis massa. In eu massa ac nisl ultricies laoreet. Suspendisse potenti. Etiam sagittis lacinia massa. In fringilla nulla eget vestibulum fermentum.
-<LineBreak/><LineBreak/>
-Sed rhoncus fermentum tellus, quis fringilla augue convallis at. Cras imperdiet scelerisque dictum. Nam maximus justo nec dui tempus elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce suscipit ante ipsum, nec faucibus orci semper id. Suspendisse potenti. Aenean vulputate leo nec massa gravida rutrum.
-<LineBreak/><LineBreak/>
-Vivamus bibendum sem ut pulvinar dignissim. Duis sem odio, sollicitudin vitae purus a, dictum egestas diam. Cras ac leo non lectus commodo rutrum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean pulvinar molestie bibendum. Sed condimentum porta nibh dignissim finibus. Pellentesque et sapien euismod, efficitur enim a, luctus risus. Nunc diam nisl, interdum eu tempor in, feugiat vitae massa. Maecenas sed neque metus. Nullam ut ipsum cursus, vehicula eros mollis, mattis sapien. Cras molestie elit diam, eu vulputate sem hendrerit vel. Integer augue dolor, tempor ac suscipit vel, tempus vel ligula. Morbi at porta lectus. Proin in tincidunt libero, sed dictum turpis. Etiam porttitor nisi nec ipsum vehicula, pharetra faucibus neque aliquet. In enim massa, molestie nec dui eu, dictum accumsan libero.
-<LineBreak/><LineBreak/>
-Fusce ac facilisis urna. Phasellus volutpat pulvinar cursus. Curabitur in fermentum nunc, a eleifend libero. In ut ante rutrum, tincidunt justo sed, malesuada dui. Nunc sit amet nisi quam. In hac habitasse platea dictumst. Fusce dictum, velit at maximus semper, massa eros eleifend odio, vel tempus erat dolor vitae urna. Sed ex orci, pretium in arcu sed, laoreet varius lacus.
-<LineBreak/><LineBreak/>
-Nunc iaculis vel purus nec lacinia. Suspendisse dictum pellentesque elit, et vestibulum nibh aliquam at. Duis tristique, nunc at venenatis ultricies, nisl orci sagittis augue, at finibus arcu nisl quis libero. Mauris tempor vitae quam commodo facilisis. Proin eget diam arcu. Sed molestie ante sapien, eget interdum massa venenatis in. Etiam enim augue, consectetur eget lorem in, porta venenatis urna. Nullam vehicula consequat est, sed gravida orci blandit vitae. Pellentesque sagittis faucibus ante, at vehicula tortor finibus id. Integer imperdiet ante orci, in volutpat ligula dignissim sed. Maecenas sed tellus dolor. Cras lacinia, lacus eget consequat venenatis, quam risus placerat ligula, sit amet tempus libero leo vel risus.
-<LineBreak/><LineBreak/>
-Proin quis arcu rhoncus, vestibulum velit id, congue lectus. Nam faucibus tincidunt magna consectetur pulvinar. Nulla imperdiet lacus nec imperdiet commodo. Vestibulum vel commodo ex. Curabitur eu ornare neque, vel rhoncus justo. Donec quis augue risus. Suspendisse malesuada vitae lorem nec ullamcorper. Maecenas sed mi vel metus vehicula dignissim. Nam lobortis viverra leo nec molestie. Sed pharetra mauris in dapibus molestie. Praesent lectus orci, porta ac lacinia ultricies, vestibulum eget urna.
-<LineBreak/><LineBreak/>
-Ut ex purus, viverra non ipsum id, tempus placerat justo. Vestibulum nulla felis, posuere nec varius id, euismod vel eros. Phasellus sem ipsum, imperdiet vel mi in, cursus fermentum nulla. Phasellus sit amet arcu ut leo dictum sodales. Sed tincidunt, lectus eget facilisis scelerisque, elit quam varius leo, non placerat nibh lacus et justo. Nunc lacinia dolor vel massa egestas, eget sagittis tellus tempor. Quisque vel ornare ante, vel luctus mauris. Sed ac tincidunt odio. In condimentum dolor non ligula vestibulum fringilla. Duis volutpat suscipit lectus cursus congue.
-<LineBreak/><LineBreak/>
-Quisque ultrices, turpis imperdiet dapibus dictum, urna ipsum faucibus odio, sed elementum justo purus ac risus. Ut ut ligula non nunc egestas pharetra quis nec tellus. Duis risus augue, consectetur sed fermentum quis, iaculis at ipsum. Morbi ex nisi, malesuada quis odio in, auctor sagittis sapien. Praesent placerat pharetra semper. Nullam ullamcorper imperdiet ipsum a malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque sed elementum massa. Fusce finibus lectus vitae massa facilisis, ac pellentesque libero convallis. Praesent sagittis ullamcorper urna imperdiet volutpat.
-<LineBreak/><LineBreak/>
-Donec imperdiet enim vestibulum mauris dignissim, vitae molestie quam iaculis. Pellentesque vitae ex ut magna tempus sodales ut at augue. Ut hendrerit turpis ligula, at luctus tortor luctus sollicitudin. Fusce ultrices eros in nisl porta porttitor. Vestibulum ipsum nulla, pellentesque vel egestas sit amet, venenatis vitae risus. Suspendisse posuere dictum nisi vel ornare. Mauris eget elit non arcu fermentum ultricies ac id nisl. Mauris sodales enim neque, eleifend semper diam elementum id. Nulla consequat pulvinar lobortis. Ut purus urna, vulputate quis consequat eget, semper eu risus. Nam accumsan nunc ut mi scelerisque, id malesuada massa molestie.
-<LineBreak/><LineBreak/>
-Morbi vel odio id enim malesuada aliquet. Donec pharetra elit non aliquam viverra. Integer blandit tristique orci eu vehicula. Phasellus massa nibh, condimentum sed leo eget, interdum consectetur sem. Ut aliquet sit amet sem in tristique. Nullam suscipit id augue nec egestas. Fusce dignissim est eget urna fringilla fringilla. Aenean ut faucibus dolor. Fusce in tellus eu nulla vestibulum mollis. Nulla facilisi. Pellentesque placerat lacus velit, in malesuada ipsum fermentum ac. Nulla eget felis vitae sapien sagittis condimentum. Nulla pharetra varius vehicula. Mauris ullamcorper eros id mollis blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-<LineBreak/><LineBreak/>
-Sed ut convallis nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus ultricies fermentum ex, at molestie tellus congue nec. Donec eu tempus neque. Nunc tristique arcu urna, non posuere velit dignissim vitae. Maecenas quis libero quis est iaculis fermentum a et ante. In laoreet cursus turpis, quis lacinia magna tincidunt sed. Nulla interdum, est ac molestie tempus, dolor sapien feugiat tortor, nec dapibus ligula massa id lectus. Mauris laoreet, ex a pellentesque semper, arcu quam bibendum eros, sed molestie libero enim non felis. Fusce ut lectus at ex scelerisque facilisis sed in metus. Nullam sit amet risus et urna varius pretium eu ut metus. Morbi volutpat sapien velit, vitae consectetur turpis facilisis et. Sed vitae urna rutrum augue sagittis efficitur.
-<LineBreak/><LineBreak/>
-Proin nec semper dolor. Praesent eget diam elementum, iaculis nisi sed, euismod arcu. Integer pulvinar, justo mattis maximus placerat, quam risus scelerisque neque, et accumsan urna felis ut quam. Sed justo ligula, semper nec orci non, suscipit laoreet dui. Ut auctor nisl ac velit bibendum imperdiet. Curabitur accumsan vel magna et dapibus. Ut aliquet ante at fermentum congue. Morbi fringilla risus a lacus aliquam aliquam in ac urna. Suspendisse est ipsum, interdum eget ultricies eget, rutrum facilisis risus.
-<LineBreak/><LineBreak/>
-Nam gravida bibendum accumsan. Vestibulum cursus dui vitae nunc luctus gravida pellentesque id metus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean maximus vehicula magna, in consequat tortor faucibus et. Pellentesque sed suscipit turpis. Praesent vitae neque id augue venenatis imperdiet nec at massa. Praesent porta mi non mi efficitur, vitae viverra ipsum dictum. Mauris tincidunt, justo sit amet pharetra volutpat, massa neque varius magna, et accumsan justo sem eget sapien. Vestibulum porttitor nulla in nisi lobortis, in bibendum eros porta. Pellentesque eleifend libero sit amet tortor malesuada mattis. Nulla faucibus, ligula vitae cursus posuere, nisi sem molestie mauris, ut cursus metus lectus a magna. Nullam turpis lectus, fermentum nec lacus in, aliquam venenatis turpis. Sed ipsum nibh, tincidunt sed lorem nec, accumsan aliquet erat. Suspendisse euismod nisi et pharetra sollicitudin. Fusce pretium lectus quis ex consectetur, sit amet tempus lacus posuere.
-<LineBreak/><LineBreak/>
-Sed id eleifend felis. Nunc rhoncus fermentum dapibus. Curabitur a augue congue, condimentum diam eu, convallis leo. Quisque tempus est ac nibh iaculis iaculis. Sed mauris dui, suscipit viverra lorem at, sodales lacinia risus. Nunc congue ex mi, non ultricies est facilisis eget. Nulla sem massa, laoreet congue nibh in, facilisis gravida ligula.
-<LineBreak/><LineBreak/>
-Phasellus in diam felis. Donec sodales pellentesque sem quis aliquet. Aliquam blandit mauris ac purus placerat auctor. Sed congue, neque eu hendrerit ultricies, eros ipsum hendrerit sem, nec finibus mauris ante quis libero. Sed pharetra facilisis orci a aliquam. Ut massa justo, sodales a euismod eu, gravida non magna. Vestibulum sit amet pharetra augue.
-<LineBreak/><LineBreak/>
-Aliquam tempor tempor felis, nec pellentesque mi tristique sed. Suspendisse massa eros, dictum in nisi bibendum, volutpat placerat neque. Quisque vitae sagittis odio. Phasellus sagittis eleifend ullamcorper. Aliquam non odio porta, pulvinar ligula et, sodales augue. Praesent et viverra eros. Aenean elit ante, bibendum eget quam ac, vestibulum gravida purus. Curabitur euismod placerat ligula, vitae sodales diam. Cras pulvinar id felis id interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla convallis, nunc in mollis aliquam, lacus risus vulputate sem, ut posuere nulla tellus ut dolor. Donec eu diam pretium, porttitor nulla vel, elementum eros. Proin vel mauris pulvinar ligula accumsan blandit a sit amet ex. Etiam dolor lectus, hendrerit vitae justo sed, lacinia feugiat augue. Aliquam id tortor at tortor interdum aliquam. Morbi nunc quam, pulvinar vel mauris sit amet, consectetur congue tellus.
-<LineBreak/><LineBreak/>
-Mauris vitae purus sed neque volutpat laoreet porta egestas lacus. Aenean tellus metus, dictum ut vestibulum dignissim, dignissim vel urna. Pellentesque in suscipit enim. Ut convallis eros non purus convallis fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin at egestas dui. Nulla hendrerit convallis lectus quis tempor. Praesent sed faucibus justo. Aenean suscipit, metus ut sodales convallis, ex ex sodales lacus, non congue velit augue non lorem.
-<LineBreak/><LineBreak/>
-Nulla facilisi. In ac tempor tellus, quis laoreet urna. Aenean mollis ante vitae erat lacinia, a elementum eros bibendum. Maecenas viverra iaculis odio at euismod. Ut ac mollis turpis, sed laoreet lacus. Nulla facilisi. Nam in tristique lacus. Donec hendrerit ante justo, at gravida quam molestie nec. Nullam eu suscipit ante. Nullam convallis fringilla neque, vel suscipit magna viverra at. Nullam commodo nulla dolor, vel ornare urna tincidunt semper.
-<LineBreak/><LineBreak/>
-Generated 50 paragraphs, 4645 words, 31270 bytes of Lorem Ipsum
-            </TextBlock>
-            </Border>
+        <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Background="#FFFAF8F5">
+            <StackPanel>
+                <!-- Masthead -->
+                <Border Background="#FF14171C" Padding="20,14">
+                    <Grid MaxWidth="1100">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Grid Width="34" Height="34">
+                                <Ellipse>
+                                    <Ellipse.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FFE63946" Offset="0"/><GradientStop Color="#FFF4A261" Offset="1"/></LinearGradientBrush></Ellipse.Fill>
+                                </Ellipse>
+                                <Path Data="M12,9 L12,24 L23,24" Stroke="White" StrokeThickness="3.5" StrokeLineCap="Round" StrokeJoin="Round"/>
+                            </Grid>
+                            <TextBlock Text="LOREM" Foreground="White" FontSize="21" FontWeight="Black" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="magazine" Foreground="#FFF4A261" FontSize="21" FontStyle="Italic" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                            <Path Data="M19,11 A8,8 0 1 1 3,11 A8,8 0 1 1 19,11 Z M21,21 L16.65,16.65" Width="20" Height="20" Stretch="Uniform" Stroke="White" StrokeThickness="2" StrokeLineCap="Round" StrokeJoin="Round" Margin="0,0,18,0"/>
+                            <Path Data="M19,21 L12,16 L5,21 L5,5 A2,2 0 0 1 7,3 L17,3 A2,2 0 0 1 19,5 Z" Width="20" Height="20" Stretch="Uniform" Stroke="White" StrokeThickness="2" StrokeLineCap="Round" StrokeJoin="Round" Margin="0,0,18,0"/>
+                            <Path Data="M3,12 L21,12 M3,6 L21,6 M3,18 L21,18" Width="22" Height="22" Stretch="Uniform" Stroke="White" StrokeThickness="2" StrokeLineCap="Round" StrokeJoin="Round" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border Background="#FF1F242C" Padding="12,0">
+                    <Grid MaxWidth="760">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Margin="0,12,0,0">
+                            <TextBlock Text="IPSUM" FontSize="12" FontWeight="SemiBold" Foreground="White" HorizontalAlignment="Center"/>
+                            <Border Width="22" Height="3" CornerRadius="1.5" Margin="0,9,0,0" HorizontalAlignment="Center">
+                                <Border.Background><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%"><GradientStop Color="#FFE63946" Offset="0"/><GradientStop Color="#FFF4A261" Offset="1"/></LinearGradientBrush></Border.Background>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="0,12,0,0">
+                            <TextBlock Text="DOLOR" FontSize="12" FontWeight="SemiBold" Foreground="#FFA9B1BB" HorizontalAlignment="Center"/>
+                            <Border Width="22" Height="3" CornerRadius="1.5" Margin="0,9,0,0" HorizontalAlignment="Center">
+                                <Border.Background><SolidColorBrush Color="Transparent"/></Border.Background>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" Margin="0,12,0,0">
+                            <TextBlock Text="SIT" FontSize="12" FontWeight="SemiBold" Foreground="#FFA9B1BB" HorizontalAlignment="Center"/>
+                            <Border Width="22" Height="3" CornerRadius="1.5" Margin="0,9,0,0" HorizontalAlignment="Center">
+                                <Border.Background><SolidColorBrush Color="Transparent"/></Border.Background>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Grid.Column="3" Margin="0,12,0,0">
+                            <TextBlock Text="AMET" FontSize="12" FontWeight="SemiBold" Foreground="#FFA9B1BB" HorizontalAlignment="Center"/>
+                            <Border Width="22" Height="3" CornerRadius="1.5" Margin="0,9,0,0" HorizontalAlignment="Center">
+                                <Border.Background><SolidColorBrush Color="Transparent"/></Border.Background>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Grid.Column="4" Margin="0,12,0,0">
+                            <TextBlock Text="ELIT" FontSize="12" FontWeight="SemiBold" Foreground="#FFA9B1BB" HorizontalAlignment="Center"/>
+                            <Border Width="22" Height="3" CornerRadius="1.5" Margin="0,9,0,0" HorizontalAlignment="Center">
+                                <Border.Background><SolidColorBrush Color="Transparent"/></Border.Background>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <StackPanel MaxWidth="760" Margin="20,28,20,0">
+                    <!-- Article header -->
+                    <TextBlock FontSize="13" Foreground="#FF6B7280" TextWrapping="Wrap">Home › Ipsum › <Run Foreground="#FFE63946">Dolor sit amet</Run></TextBlock>
+                    <Border HorizontalAlignment="Left" CornerRadius="14" Padding="12,5" Margin="0,18,0,0">
+                        <Border.Background><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%"><GradientStop Color="#FFE63946" Offset="0"/><GradientStop Color="#FFF4A261" Offset="1"/></LinearGradientBrush></Border.Background>
+                        <TextBlock Text="LOREM TRAVEL" FontSize="11" FontWeight="Bold" Foreground="White"/>
+                    </Border>
+                    <TextBlock Text="Lorem Ipsum Dolor Sit Amet: Consectetur Adipiscing Elit Across the Northern Fjords" FontSize="38" FontWeight="Bold" LineHeight="46" TextWrapping="Wrap" Margin="0,14,0,0" Foreground="#FF111418"/>
+                    <TextBlock Text="Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip." FontSize="19" LineHeight="29" TextWrapping="Wrap" Margin="0,14,0,0" Foreground="#FF5B6470"/>
+                    <Grid Margin="0,26,0,0">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <Ellipse Width="52" Height="52" Stroke="White" StrokeThickness="2">
+                            <Ellipse.Fill><ImageBrush Source="/Assets/Images/author.jpg" Stretch="UniformToFill"/></Ellipse.Fill>
+                        </Ellipse>
+                        <StackPanel Grid.Column="1" Margin="14,0,0,0" VerticalAlignment="Center">
+                            <TextBlock FontSize="15" Foreground="#FF111418" TextWrapping="Wrap"><Bold>Lorema Ipsumova</Bold> · <Run Foreground="#FFE63946" FontWeight="SemiBold">Follow</Run></TextBlock>
+                            <TextBlock Text="Senior Dolor Correspondent, Lorem Magazine" FontSize="13" Foreground="#FF6B7280" Margin="0,3,0,0" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Grid>
+                    <Border BorderBrush="#FFE5E1DA" BorderThickness="0,1,0,1" Padding="0,10" Margin="0,20,0,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <Path Data="M22,12 A10,10 0 1 1 2,12 A10,10 0 1 1 22,12 Z M12,6 L12,12 L16,14" Width="16" Height="16" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="Nov 18, 2026 · 12 min read" FontSize="13" Foreground="#FF6B7280" Margin="8,0,0,0" VerticalAlignment="Center" TextWrapping="Wrap" MaxWidth="160"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                <Border Width="34" Height="34" CornerRadius="17" Background="#FFF0ECE6" Margin="8,0,0,0">
+                                    <Path Data="M20.84,4.61 A5.5,5.5 0 0 0 13.06,4.61 L12,5.67 L10.94,4.61 A5.5,5.5 0 0 0 3.16,12.39 L4.22,13.45 L12,21.23 L19.78,13.45 L20.84,12.39 A5.5,5.5 0 0 0 20.84,4.61 Z" Width="16" Height="16" Stretch="Uniform" Stroke="#FF111418" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <Border Width="34" Height="34" CornerRadius="17" Background="#FFF0ECE6" Margin="8,0,0,0">
+                                    <Path Data="M19,21 L12,16 L5,21 L5,5 A2,2 0 0 1 7,3 L17,3 A2,2 0 0 1 19,5 Z" Width="16" Height="16" Stretch="Uniform" Stroke="#FF111418" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <Border Width="34" Height="34" CornerRadius="17" Background="#FFF0ECE6" Margin="8,0,0,0">
+                                    <Path Data="M21,5 A3,3 0 1 1 15,5 A3,3 0 1 1 21,5 Z M9,12 A3,3 0 1 1 3,12 A3,3 0 1 1 9,12 Z M21,19 A3,3 0 1 1 15,19 A3,3 0 1 1 21,19 Z M8.59,13.51 L15.42,17.49 M15.41,6.51 L8.59,10.49" Width="16" Height="16" Stretch="Uniform" Stroke="#FF111418" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <Border Width="34" Height="34" CornerRadius="17" Background="#FFF0ECE6" Margin="8,0,0,0">
+                                    <Path Data="M22,2 L11,13 M22,2 L15,22 L11,13 L2,9 Z" Width="16" Height="16" Stretch="Uniform" Stroke="#FF111418" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <!-- Hero image -->
+                    <Grid Margin="0,24,0,0" Height="420">
+                        <Border CornerRadius="16" BoxShadow="0 12 32 0 #3D000000">
+                            <Border.Background><ImageBrush Source="/Assets/Images/hero.jpg" Stretch="UniformToFill"/></Border.Background>
+                        </Border>
+                        <Border CornerRadius="16">
+                            <Border.Background><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#00000000" Offset="0.45"/><GradientStop Color="#D9000000" Offset="1"/></LinearGradientBrush></Border.Background>
+                        </Border>
+                        <StackPanel VerticalAlignment="Bottom" Margin="24,0,24,22">
+                            <Border HorizontalAlignment="Left" Background="#FFE63946" CornerRadius="4" Padding="8,3">
+                                <TextBlock Text="EXCLUSIVE" FontSize="11" FontWeight="Bold" Foreground="White"/>
+                            </Border>
+                            <TextBlock Text="Ut enim ad minim veniam, quis nostrud exercitation ullamco" FontSize="24" FontWeight="Bold" LineHeight="30" Foreground="White" TextWrapping="Wrap" Margin="0,10,0,0"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                <Path Data="M23,19 A2,2 0 0 1 21,21 L3,21 A2,2 0 0 1 1,19 L1,8 A2,2 0 0 1 3,6 L7,6 L9,3 L15,3 L17,6 L21,6 A2,2 0 0 1 23,8 Z M16,13 A4,4 0 1 1 8,13 A4,4 0 1 1 16,13 Z" Width="14" Height="14" Stretch="Uniform" Stroke="#CCFFFFFF" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="Photo: Lorem Picsum" FontSize="12" Foreground="#CCFFFFFF" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <StackPanel Orientation="Horizontal" Margin="2,10,2,28">
+                        <Path Data="M23,19 A2,2 0 0 1 21,21 L3,21 A2,2 0 0 1 1,19 L1,8 A2,2 0 0 1 3,6 L7,6 L9,3 L15,3 L17,6 L21,6 A2,2 0 0 1 23,8 Z M16,13 A4,4 0 1 1 8,13 A4,4 0 1 1 16,13 Z" Width="14" Height="14" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Top" Margin="0,2,8,0"/>
+                        <TextBlock Text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam." FontSize="13" FontStyle="Italic" Foreground="#FF6B7280" TextWrapping="Wrap" MaxWidth="700"/>
+                    </StackPanel>
+                    <!-- Key figures -->
+                    <Grid Margin="0,4,0,32">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="14"/><ColumnDefinition Width="*"/><ColumnDefinition Width="14"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Background="White" CornerRadius="14" Padding="14,16" BoxShadow="0 6 18 0 #24000000">
+                            <StackPanel>
+                                <Border Width="40" Height="40" CornerRadius="20" Background="#FFFDECEC" HorizontalAlignment="Left">
+                                    <Path Data="M23,6 L13.5,15.5 L8.5,10.5 L1,18 M17,6 L23,6 L23,12" Width="20" Height="20" Stretch="Uniform" Stroke="#FFE63946" StrokeThickness="2" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <TextBlock Text="42%" FontSize="22" FontWeight="Black" Foreground="#FF111418" Margin="0,12,0,0"/>
+                                <TextBlock Text="Lorem ipsum dolor sit amet" FontSize="12" Foreground="#FF6B7280" TextWrapping="Wrap" Margin="0,2,0,0"/>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Column="2" Background="White" CornerRadius="14" Padding="14,16" BoxShadow="0 6 18 0 #24000000">
+                            <StackPanel>
+                                <Border Width="40" Height="40" CornerRadius="20" Background="#FFE8F2F7" HorizontalAlignment="Left">
+                                    <Path Data="M22,12 A10,10 0 1 1 2,12 A10,10 0 1 1 22,12 Z M2,12 L22,12 M12,2 A15.3,15.3 0 0 1 16,12 A15.3,15.3 0 0 1 12,22 A15.3,15.3 0 0 1 8,12 A15.3,15.3 0 0 1 12,2 Z" Width="20" Height="20" Stretch="Uniform" Stroke="#FF457B9D" StrokeThickness="2" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <TextBlock Text="1.2k" FontSize="22" FontWeight="Black" Foreground="#FF111418" Margin="0,12,0,0"/>
+                                <TextBlock Text="Consectetur adipiscing elit" FontSize="12" Foreground="#FF6B7280" TextWrapping="Wrap" Margin="0,2,0,0"/>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Column="4" Background="White" CornerRadius="14" Padding="14,16" BoxShadow="0 6 18 0 #24000000">
+                            <StackPanel>
+                                <Border Width="40" Height="40" CornerRadius="20" Background="#FFE8F5F3" HorizontalAlignment="Left">
+                                    <Path Data="M17,21 L17,19 A4,4 0 0 0 13,15 L5,15 A4,4 0 0 0 1,19 L1,21 M13,7 A4,4 0 1 1 5,7 A4,4 0 1 1 13,7 Z M23,21 L23,19 A4,4 0 0 0 20,15.13 M16,3.13 A4,4 0 0 1 16,10.88" Width="20" Height="20" Stretch="Uniform" Stroke="#FF2A9D8F" StrokeThickness="2" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <TextBlock Text="9.6k" FontSize="22" FontWeight="Black" Foreground="#FF111418" Margin="0,12,0,0"/>
+                                <TextBlock Text="Sed do eiusmod tempor" FontSize="12" Foreground="#FF6B7280" TextWrapping="Wrap" Margin="0,2,0,0"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                    <!-- Article body -->
+                    <Grid>
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <TextBlock Text="L" FontSize="76" FontWeight="Black" Foreground="#FFE63946" Margin="0,-10,12,0" VerticalAlignment="Top"/>
+                        <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" Grid.Column="1">orem ipsum dolor sit amet, <Bold>consectetur adipiscing elit</Bold>. Donec in suscipit magna. Maecenas vel quam ut quam bibendum posuere et ac tellus. Cras sagittis neque interdum sapien pellentesque, <Italic>eget venenatis est luctus</Italic>. Sed augue erat, lobortis id lobortis ac, rutrum vel ex. Sed non nisl facilisis, mollis est ut, ornare ex.</TextBlock>
+                    </Grid>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Nam finibus, est sed tincidunt faucibus, lectus dui congue urna, vel bibendum sem mauris vel eros. Aenean placerat eleifend nibh a commodo. <Underline><Run Foreground="#FFE63946">Fusce nec mattis orci</Run></Underline>. Nam ac pharetra lacus. Suspendisse a nunc vitae elit ullamcorper efficitur. <Bold>Duis mattis magna velit.</Bold> Nullam quis turpis quis lacus fermentum tristique eu sed ex. Maecenas tincidunt ligula in lorem viverra, <Italic>sit amet fringilla magna ornare</Italic>.</TextBlock>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Nam pulvinar, mi eu congue rhoncus, lectus magna mollis lectus, eu commodo ipsum diam id neque. Sed malesuada eros sit amet lobortis dictum. Maecenas tincidunt finibus enim, quis laoreet felis tempor non. Mauris sit amet urna diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec euismod leo ac euismod bibendum. Vivamus a molestie sapien. Pellentesque non mollis metus. Proin et felis vel turpis cursus congue sed quis velit.</TextBlock>
+                    <StackPanel Margin="0,20,0,16">
+                        <Border Width="44" Height="4" CornerRadius="2" HorizontalAlignment="Left">
+                            <Border.Background><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%"><GradientStop Color="#FFE63946" Offset="0"/><GradientStop Color="#FFF4A261" Offset="1"/></LinearGradientBrush></Border.Background>
+                        </Border>
+                        <TextBlock Text="Quis nostrud exercitation ullamco" FontSize="27" FontWeight="Bold" LineHeight="34" TextWrapping="Wrap" Margin="0,12,0,0" Foreground="#FF111418"/>
+                    </StackPanel>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Quisque pulvinar sagittis ex, nec hendrerit justo aliquam a. Maecenas malesuada ipsum vel ex molestie, id faucibus quam blandit. Nullam iaculis maximus ligula ac tempus. Phasellus ut magna eget nulla faucibus congue vel sed mauris. Donec euismod mauris in elit porttitor, ut iaculis nisl mollis. Donec ullamcorper, est eget tincidunt iaculis, urna eros suscipit tortor, ut luctus est nunc et dui. Phasellus mollis urna ac ante molestie dictum. Pellentesque viverra venenatis dictum. Aliquam eu lectus eget libero faucibus ornare vitae quis elit.</TextBlock>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Ut vitae imperdiet mi. Cras dictum elit vel condimentum accumsan. Vivamus id neque eget arcu bibendum posuere id nec lorem. Morbi eros orci, congue non lacinia id, euismod non lorem. In sit amet felis malesuada diam lobortis tempor et tempus diam. Aenean ut metus turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris suscipit orci auctor purus bibendum rhoncus. Mauris in placerat leo, sit amet molestie ligula.</TextBlock>
+                    <Image Source="/Assets/Images/waterfall.jpg" Stretch="UniformToFill" Height="320" Margin="0,8,0,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="2,10,2,28">
+                        <Path Data="M23,19 A2,2 0 0 1 21,21 L3,21 A2,2 0 0 1 1,19 L1,8 A2,2 0 0 1 3,6 L7,6 L9,3 L15,3 L17,6 L21,6 A2,2 0 0 1 23,8 Z M16,13 A4,4 0 1 1 8,13 A4,4 0 1 1 16,13 Z" Width="14" Height="14" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Top" Margin="0,2,8,0"/>
+                        <TextBlock Text="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." FontSize="13" FontStyle="Italic" Foreground="#FF6B7280" TextWrapping="Wrap" MaxWidth="700"/>
+                    </StackPanel>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Nunc blandit vel sapien et placerat. Donec in tortor nec sem lobortis elementum. Suspendisse congue gravida molestie. Quisque sit amet semper quam, vitae varius felis. Aliquam in ipsum tempus, mollis nibh vitae, sodales mauris. Vivamus at egestas nisi, a consectetur elit. Nullam id ligula faucibus, ullamcorper eros vitae, vestibulum ante. Morbi rutrum augue sit amet massa varius, non congue lectus condimentum. Aenean elit metus, ultrices accumsan laoreet eu, tempor quis orci. Phasellus consectetur eget massa et volutpat. In accumsan ante et molestie egestas. Morbi ut justo iaculis, efficitur dolor viverra, suscipit lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</TextBlock>
+                    <!-- Pull quote -->
+                    <Grid Margin="0,14,0,34">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="4"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <Rectangle RadiusX="2" RadiusY="2">
+                            <Rectangle.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#FFE63946" Offset="0"/><GradientStop Color="#FFF4A261" Offset="1"/></LinearGradientBrush></Rectangle.Fill>
+                        </Rectangle>
+                        <StackPanel Grid.Column="1" Margin="22,4,0,4">
+                            <Path Data="M0,20 L0,12 C0,5 4,1 10,0 L11,3 C7,4.5 5.5,7 5.5,10 L10,10 L10,20 Z M14,20 L14,12 C14,5 18,1 24,0 L25,3 C21,4.5 19.5,7 19.5,10 L24,10 L24,20 Z" Fill="#FFE63946" Opacity="0.3" Width="44" Height="36" Stretch="Uniform" HorizontalAlignment="Left"/>
+                            <TextBlock Text="“Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.”" FontSize="25" FontStyle="Italic" LineHeight="36" Foreground="#FF1D3557" TextWrapping="Wrap" Margin="0,8,0,0"/>
+                            <TextBlock Text="— Marcus Tullius Lorem, Ipsum Institute" FontSize="14" FontWeight="SemiBold" Foreground="#FF6B7280" Margin="0,12,0,0"/>
+                        </StackPanel>
+                    </Grid>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Fusce in lacus quis ipsum scelerisque fringilla eget eget neque. Etiam dictum, ipsum et rutrum luctus, mauris massa mattis tortor, nec mollis ligula odio et metus. Vestibulum eget dignissim orci. Etiam fermentum urna leo, in posuere nibh bibendum at. Suspendisse potenti. Suspendisse lobortis sapien in leo fermentum aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</TextBlock>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Aenean augue enim, hendrerit non lorem nec, blandit luctus nunc. Nulla pretium erat at nulla feugiat tristique. Nam auctor et augue vitae auctor. Nam sodales cursus justo sit amet viverra. Fusce condimentum, ligula et maximus dapibus, tellus diam tempor orci, at viverra mauris elit nec dui. Praesent sodales nulla sed ipsum feugiat, eget finibus velit pretium. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas consequat sagittis libero eu sollicitudin. Quisque sem tortor, consectetur at ullamcorper in, egestas et orci. Quisque ut velit vitae nisl eleifend porta finibus in elit. Mauris eros eros, sollicitudin quis finibus et, ultricies id neque.</TextBlock>
+                    <!-- Chart -->
+                    <Border Background="White" CornerRadius="16" Padding="22" Margin="0,10,0,32" BoxShadow="0 6 18 0 #24000000">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="Ipsum per annum" FontSize="18" FontWeight="Bold" Foreground="#FF111418"/>
+                                    <TextBlock Text="Dolor sit amet, consectetur adipiscing (in thousands)" FontSize="13" Foreground="#FF6B7280" Margin="0,4,0,0" TextWrapping="Wrap"/>
+                                </StackPanel>
+                                <Border Grid.Column="1" VerticalAlignment="Top" Background="#FFE8F5F3" CornerRadius="10" Padding="8,3">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Path Data="M23,6 L13.5,15.5 L8.5,10.5 L1,18 M17,6 L23,6 L23,12" Width="14" Height="14" Stretch="Uniform" Stroke="#FF2A9D8F" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                        <TextBlock Text="+38%" FontSize="12" FontWeight="Bold" Foreground="#FF2A9D8F" Margin="4,0,0,0" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                            <StackPanel Orientation="Horizontal" Margin="0,14,0,0">
+                                <Ellipse Width="10" Height="10" Fill="#FF457B9D" VerticalAlignment="Center"/>
+                                <TextBlock Text="Lorem" FontSize="12" Foreground="#FF6B7280" Margin="6,0,16,0" VerticalAlignment="Center"/>
+                                <Ellipse Width="10" Height="10" Fill="#FFE63946" VerticalAlignment="Center"/>
+                                <TextBlock Text="Ipsum" FontSize="12" Foreground="#FF6B7280" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <Viewbox Stretch="Uniform" Margin="0,12,0,0">
+                                <Canvas Width="700" Height="290">
+                                    <Path Data="M50,250 L690,250 M50,195 L690,195 M50,140 L690,140 M50,85 L690,85 M50,30 L690,30" Stroke="#FFEAE6E0" StrokeThickness="1"/>
+                                    <TextBlock Text="0" Canvas.Left="10" Canvas.Top="241" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="25" Canvas.Left="10" Canvas.Top="186" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="50" Canvas.Left="10" Canvas.Top="131" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="75" Canvas.Left="10" Canvas.Top="76" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="100" Canvas.Left="10" Canvas.Top="21" FontSize="12" Foreground="#FF6B7280"/>
+                                    <Rectangle Canvas.Left="62.7" Canvas.Top="179.6" Width="28" Height="70.4" RadiusX="5" RadiusY="5">
+                                        <Rectangle.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#FF457B9D" Offset="0"/><GradientStop Color="#FFA8DADC" Offset="1"/></LinearGradientBrush></Rectangle.Fill>
+                                    </Rectangle>
+                                    <Rectangle Canvas.Left="116" Canvas.Top="151" Width="28" Height="99" RadiusX="5" RadiusY="5">
+                                        <Rectangle.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#FF457B9D" Offset="0"/><GradientStop Color="#FFA8DADC" Offset="1"/></LinearGradientBrush></Rectangle.Fill>
+                                    </Rectangle>
+                                    <Rectangle Canvas.Left="169.3" Canvas.Top="166.4" Width="28" Height="83.6" RadiusX="5" RadiusY="5">
+                                        <Rectangle.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#FF457B9D" Offset="0"/><GradientStop Color="#FFA8DADC" Offset="1"/></LinearGradientBrush></Rectangle.Fill>
+                                    </Rectangle>
+                                    <Rectangle Canvas.Left="222.7" Canvas.Top="135.6" Width="28" Height="114.4" RadiusX="5" RadiusY="5">
+                                        <Rectangle.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#FF457B9D" Offset="0"/><GradientStop Color="#FFA8DADC" Offset="1"/></LinearGradientBrush></Rectangle.Fill>
+                                    </Rectangle>
+                                    <Rectangle Canvas.Left="276" Canvas.Top="115.8" Width="28" Height="134.2" RadiusX="5" RadiusY="5">
+                                        <Rectangle.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#FF457B9D" Offset="0"/><GradientStop Color="#FFA8DADC" Offset="1"/></LinearGradientBrush></Rectangle.Fill>
+                                    </Rectangle>
+                                    <Rectangle Canvas.Left="329.3" Canvas.Top="122.4" Width="28" Height="127.6" RadiusX="5" RadiusY="5">
+                                        <Rectangle.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#FF457B9D" Offset="0"/><GradientStop Color="#FFA8DADC" Offset="1"/></LinearGradientBrush></Rectangle.Fill>
+                                    </Rectangle>
+                                    <Rectangle Canvas.Left="382.7" Canvas.Top="96" Width="28" Height="154" RadiusX="5" RadiusY="5">
+                                        <Rectangle.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#FF457B9D" Offset="0"/><GradientStop Color="#FFA8DADC" Offset="1"/></LinearGradientBrush></Rectangle.Fill>
+                                    </Rectangle>
+                                    <Rectangle Canvas.Left="436" Canvas.Top="104.8" Width="28" Height="145.2" RadiusX="5" RadiusY="5">
+                                        <Rectangle.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#FF457B9D" Offset="0"/><GradientStop Color="#FFA8DADC" Offset="1"/></LinearGradientBrush></Rectangle.Fill>
+                                    </Rectangle>
+                                    <Rectangle Canvas.Left="489.3" Canvas.Top="87.2" Width="28" Height="162.8" RadiusX="5" RadiusY="5">
+                                        <Rectangle.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#FF457B9D" Offset="0"/><GradientStop Color="#FFA8DADC" Offset="1"/></LinearGradientBrush></Rectangle.Fill>
+                                    </Rectangle>
+                                    <Rectangle Canvas.Left="542.7" Canvas.Top="71.8" Width="28" Height="178.2" RadiusX="5" RadiusY="5">
+                                        <Rectangle.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#FF457B9D" Offset="0"/><GradientStop Color="#FFA8DADC" Offset="1"/></LinearGradientBrush></Rectangle.Fill>
+                                    </Rectangle>
+                                    <Rectangle Canvas.Left="596" Canvas.Top="80.6" Width="28" Height="169.4" RadiusX="5" RadiusY="5">
+                                        <Rectangle.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#FF457B9D" Offset="0"/><GradientStop Color="#FFA8DADC" Offset="1"/></LinearGradientBrush></Rectangle.Fill>
+                                    </Rectangle>
+                                    <Rectangle Canvas.Left="649.3" Canvas.Top="52" Width="28" Height="198" RadiusX="5" RadiusY="5">
+                                        <Rectangle.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#FF457B9D" Offset="0"/><GradientStop Color="#FFA8DADC" Offset="1"/></LinearGradientBrush></Rectangle.Fill>
+                                    </Rectangle>
+                                    <Path Data="M76.7,206 C85.6,203.1 112.2,193.9 130,188.4 C147.8,182.9 165.5,174.8 183.3,173 C201.1,171.2 218.9,181.8 236.7,177.4 C254.5,173 272.2,154.7 290,146.6 C307.8,138.5 325.5,130.5 343.3,129 C361.1,127.5 378.9,140.7 396.7,137.8 C414.5,134.9 432.2,118 450,111.4 C467.8,104.8 485.5,101.5 503.3,98.2 C521.1,94.9 538.9,95.6 556.7,91.6 C574.5,87.6 592.2,79.1 610,74 C627.8,68.9 654.4,63 663.3,60.8 L663.3,250 L76.7,250 Z">
+                                        <Path.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%"><GradientStop Color="#55E63946" Offset="0"/><GradientStop Color="#00E63946" Offset="1"/></LinearGradientBrush></Path.Fill>
+                                    </Path>
+                                    <Path Data="M76.7,206 C85.6,203.1 112.2,193.9 130,188.4 C147.8,182.9 165.5,174.8 183.3,173 C201.1,171.2 218.9,181.8 236.7,177.4 C254.5,173 272.2,154.7 290,146.6 C307.8,138.5 325.5,130.5 343.3,129 C361.1,127.5 378.9,140.7 396.7,137.8 C414.5,134.9 432.2,118 450,111.4 C467.8,104.8 485.5,101.5 503.3,98.2 C521.1,94.9 538.9,95.6 556.7,91.6 C574.5,87.6 592.2,79.1 610,74 C627.8,68.9 654.4,63 663.3,60.8" Stroke="#FFE63946" StrokeThickness="3" StrokeJoin="Round"/>
+                                    <Ellipse Canvas.Left="71.7" Canvas.Top="201" Width="10" Height="10" Fill="White" Stroke="#FFE63946" StrokeThickness="2.5"/>
+                                    <Ellipse Canvas.Left="125" Canvas.Top="183.4" Width="10" Height="10" Fill="White" Stroke="#FFE63946" StrokeThickness="2.5"/>
+                                    <Ellipse Canvas.Left="178.3" Canvas.Top="168" Width="10" Height="10" Fill="White" Stroke="#FFE63946" StrokeThickness="2.5"/>
+                                    <Ellipse Canvas.Left="231.7" Canvas.Top="172.4" Width="10" Height="10" Fill="White" Stroke="#FFE63946" StrokeThickness="2.5"/>
+                                    <Ellipse Canvas.Left="285" Canvas.Top="141.6" Width="10" Height="10" Fill="White" Stroke="#FFE63946" StrokeThickness="2.5"/>
+                                    <Ellipse Canvas.Left="338.3" Canvas.Top="124" Width="10" Height="10" Fill="White" Stroke="#FFE63946" StrokeThickness="2.5"/>
+                                    <Ellipse Canvas.Left="391.7" Canvas.Top="132.8" Width="10" Height="10" Fill="White" Stroke="#FFE63946" StrokeThickness="2.5"/>
+                                    <Ellipse Canvas.Left="445" Canvas.Top="106.4" Width="10" Height="10" Fill="White" Stroke="#FFE63946" StrokeThickness="2.5"/>
+                                    <Ellipse Canvas.Left="498.3" Canvas.Top="93.2" Width="10" Height="10" Fill="White" Stroke="#FFE63946" StrokeThickness="2.5"/>
+                                    <Ellipse Canvas.Left="551.7" Canvas.Top="86.6" Width="10" Height="10" Fill="White" Stroke="#FFE63946" StrokeThickness="2.5"/>
+                                    <Ellipse Canvas.Left="605" Canvas.Top="69" Width="10" Height="10" Fill="White" Stroke="#FFE63946" StrokeThickness="2.5"/>
+                                    <Ellipse Canvas.Left="658.3" Canvas.Top="55.8" Width="10" Height="10" Fill="White" Stroke="#FFE63946" StrokeThickness="2.5"/>
+                                    <TextBlock Text="Jan" Canvas.Left="56.7" Canvas.Top="262" Width="40" TextAlignment="Center" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="Feb" Canvas.Left="110" Canvas.Top="262" Width="40" TextAlignment="Center" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="Mar" Canvas.Left="163.3" Canvas.Top="262" Width="40" TextAlignment="Center" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="Apr" Canvas.Left="216.7" Canvas.Top="262" Width="40" TextAlignment="Center" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="May" Canvas.Left="270" Canvas.Top="262" Width="40" TextAlignment="Center" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="Jun" Canvas.Left="323.3" Canvas.Top="262" Width="40" TextAlignment="Center" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="Jul" Canvas.Left="376.7" Canvas.Top="262" Width="40" TextAlignment="Center" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="Aug" Canvas.Left="430" Canvas.Top="262" Width="40" TextAlignment="Center" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="Sep" Canvas.Left="483.3" Canvas.Top="262" Width="40" TextAlignment="Center" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="Oct" Canvas.Left="536.7" Canvas.Top="262" Width="40" TextAlignment="Center" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="Nov" Canvas.Left="590" Canvas.Top="262" Width="40" TextAlignment="Center" FontSize="12" Foreground="#FF6B7280"/>
+                                    <TextBlock Text="Dec" Canvas.Left="643.3" Canvas.Top="262" Width="40" TextAlignment="Center" FontSize="12" Foreground="#FF6B7280"/>
+                                    <Border Canvas.Left="599.3" Canvas.Top="12.8" Background="#FF111418" CornerRadius="6" Padding="8,4" BoxShadow="0 2 8 0 #1F000000">
+                                        <TextBlock Text="86k · Dec" FontSize="12" FontWeight="SemiBold" Foreground="White"/>
+                                    </Border>
+                                </Canvas>
+                            </Viewbox>
+                        </StackPanel>
+                    </Border>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Donec quis aliquam nisi. Mauris lacinia tortor at augue suscipit, vitae blandit dolor suscipit. In hac habitasse platea dictumst. In imperdiet condimentum ipsum et iaculis. Maecenas lobortis sit amet turpis dignissim fringilla. Vestibulum quis nulla arcu. Nam eu sem nisl. Quisque dapibus lorem et tortor faucibus, ut scelerisque metus elementum. Donec pretium nulla id tristique convallis. Nullam ligula erat, posuere vel posuere id, scelerisque sit amet est. Cras malesuada lectus a mauris efficitur mollis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed tincidunt dignissim lectus at condimentum.</TextBlock>
+                    <StackPanel Margin="0,20,0,16">
+                        <Border Width="44" Height="4" CornerRadius="2" HorizontalAlignment="Left">
+                            <Border.Background><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%"><GradientStop Color="#FFE63946" Offset="0"/><GradientStop Color="#FFF4A261" Offset="1"/></LinearGradientBrush></Border.Background>
+                        </Border>
+                        <TextBlock Text="Duis aute irure dolor in reprehenderit" FontSize="27" FontWeight="Bold" LineHeight="34" TextWrapping="Wrap" Margin="0,12,0,0" Foreground="#FF111418"/>
+                    </StackPanel>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Vestibulum ac turpis egestas, vestibulum nibh a, tristique magna. Aliquam lobortis placerat nulla et tincidunt. Nullam tristique lacinia lectus id fermentum. Ut imperdiet felis sit amet ultricies sodales. Integer nec tortor interdum, vestibulum urna sit amet, sodales odio. Nam semper eleifend luctus. Sed nunc ante, viverra in felis placerat, egestas fermentum elit. Ut id tempus diam. Aenean suscipit urna ac enim ullamcorper congue. Sed ut placerat sem, et dignissim lacus. Curabitur condimentum felis ac purus imperdiet sodales. In hac habitasse platea dictumst. Proin non orci tincidunt, mattis augue non, blandit enim.</TextBlock>
+                    <!-- Key takeaways -->
+                    <Border CornerRadius="16" Padding="22" Margin="0,8,0,32" BorderBrush="#FFF3D9C4" BorderThickness="1">
+                        <Border.Background><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FFFFF4EA" Offset="0"/><GradientStop Color="#FFFDE8EF" Offset="1"/></LinearGradientBrush></Border.Background>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="32" Height="32" CornerRadius="16" Background="#FFE63946" >
+                                    <Path Data="M13,2 L3,14 L12,14 L11,22 L21,10 L12,10 Z" Width="16" Height="16" Stretch="Uniform" Stroke="White" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <TextBlock Text="Key takeaways" FontSize="19" FontWeight="Bold" Foreground="#FF111418" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <Grid Margin="0,14,0,0">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                                <Border Width="24" Height="24" CornerRadius="12" Background="#FF2A9D8F" VerticalAlignment="Top" Margin="0,1,0,0">
+                                    <Path Data="M20,6 L9,17 L4,12" Width="13" Height="13" Stretch="Uniform" Stroke="White" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <TextBlock Grid.Column="1" Text="Aliquam et ornare urna." FontSize="15" LineHeight="23" Foreground="#FF2B2F36" TextWrapping="Wrap" Margin="12,0,0,0"/>
+                            </Grid>
+                            <Grid Margin="0,14,0,0">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                                <Border Width="24" Height="24" CornerRadius="12" Background="#FF2A9D8F" VerticalAlignment="Top" Margin="0,1,0,0">
+                                    <Path Data="M20,6 L9,17 L4,12" Width="13" Height="13" Stretch="Uniform" Stroke="White" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <TextBlock Grid.Column="1" Text="Proin suscipit fringilla lacus, nec rutrum ligula pharetra at." FontSize="15" LineHeight="23" Foreground="#FF2B2F36" TextWrapping="Wrap" Margin="12,0,0,0"/>
+                            </Grid>
+                            <Grid Margin="0,14,0,0">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                                <Border Width="24" Height="24" CornerRadius="12" Background="#FF2A9D8F" VerticalAlignment="Top" Margin="0,1,0,0">
+                                    <Path Data="M20,6 L9,17 L4,12" Width="13" Height="13" Stretch="Uniform" Stroke="White" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <TextBlock Grid.Column="1" Text="Donec ullamcorper vel orci et auctor." FontSize="15" LineHeight="23" Foreground="#FF2B2F36" TextWrapping="Wrap" Margin="12,0,0,0"/>
+                            </Grid>
+                            <Grid Margin="0,14,0,0">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                                <Border Width="24" Height="24" CornerRadius="12" Background="#FF2A9D8F" VerticalAlignment="Top" Margin="0,1,0,0">
+                                    <Path Data="M20,6 L9,17 L4,12" Width="13" Height="13" Stretch="Uniform" Stroke="White" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <TextBlock Grid.Column="1" Text="Maecenas eget augue euismod, convallis lacus in, condimentum ante." FontSize="15" LineHeight="23" Foreground="#FF2B2F36" TextWrapping="Wrap" Margin="12,0,0,0"/>
+                            </Grid>
+                            <Grid Margin="0,14,0,0">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                                <Border Width="24" Height="24" CornerRadius="12" Background="#FF2A9D8F" VerticalAlignment="Top" Margin="0,1,0,0">
+                                    <Path Data="M20,6 L9,17 L4,12" Width="13" Height="13" Stretch="Uniform" Stroke="White" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <TextBlock Grid.Column="1" Text="Sed rhoncus fermentum tellus, quis fringilla augue convallis at." FontSize="15" LineHeight="23" Foreground="#FF2B2F36" TextWrapping="Wrap" Margin="12,0,0,0"/>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Nullam in nulla vitae metus rhoncus tristique sit amet id orci. Donec lacinia dapibus nunc quis hendrerit. Nunc lacinia fermentum felis, congue dictum diam varius eget. Etiam nec dignissim lacus, in sollicitudin tellus. Cras convallis vulputate arcu rhoncus commodo. Phasellus sit amet lorem eu neque posuere ullamcorper non ac neque. Suspendisse potenti. Aliquam sollicitudin lacus magna, vel rutrum erat rhoncus nec. Donec vitae mauris nec erat ultricies congue non a arcu. Cras id vulputate metus. Sed suscipit et augue et ornare. Aliquam iaculis est ac mollis semper.</TextBlock>
+                    <!-- Photo gallery -->
+                    <Grid Height="380" Margin="0,8,0,0">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="2*"/><ColumnDefinition Width="12"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions><RowDefinition Height="*"/><RowDefinition Height="12"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+                        <Border Grid.RowSpan="3" CornerRadius="14" BoxShadow="0 6 18 0 #24000000">
+                            <Border.Background><ImageBrush Source="/Assets/Images/valley.jpg" Stretch="UniformToFill"/></Border.Background>
+                        </Border>
+                        <Border Grid.Column="2" CornerRadius="14" BoxShadow="0 6 18 0 #24000000">
+                            <Border.Background><ImageBrush Source="/Assets/Images/canoe.jpg" Stretch="UniformToFill"/></Border.Background>
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="2" CornerRadius="14" BoxShadow="0 6 18 0 #24000000">
+                            <Border.Background><ImageBrush Source="/Assets/Images/cafe.jpg" Stretch="UniformToFill"/></Border.Background>
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="2" CornerRadius="14" Background="#80000000">
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Text="+12" FontSize="28" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+                                <TextBlock Text="photos" FontSize="13" Foreground="#E6FFFFFF" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                    <StackPanel Orientation="Horizontal" Margin="2,10,2,28">
+                        <Path Data="M23,19 A2,2 0 0 1 21,21 L3,21 A2,2 0 0 1 1,19 L1,8 A2,2 0 0 1 3,6 L7,6 L9,3 L15,3 L17,6 L21,6 A2,2 0 0 1 23,8 Z M16,13 A4,4 0 1 1 8,13 A4,4 0 1 1 16,13 Z" Width="14" Height="14" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Top" Margin="0,2,8,0"/>
+                        <TextBlock Text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti." FontSize="13" FontStyle="Italic" Foreground="#FF6B7280" TextWrapping="Wrap" MaxWidth="700"/>
+                    </StackPanel>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Curabitur rhoncus elementum eros in tincidunt. Curabitur et ultricies dolor. Sed rutrum eu eros eu ultrices. Curabitur egestas pharetra dui vel consectetur. Mauris id congue metus, non viverra augue. Vivamus dictum leo nec risus tempus, id tempus nisi vehicula. Aenean lobortis, est nec euismod convallis, dui nunc sagittis turpis, et luctus tortor purus consectetur velit. Nullam dignissim libero in ligula laoreet dictum. Nulla facilisi. Aenean massa lorem, pulvinar at enim aliquam, consequat dignissim leo. Pellentesque arcu ante, malesuada ac orci sed, maximus malesuada enim. Nunc pulvinar sem quis ligula suscipit tincidunt. Proin finibus odio ut turpis tincidunt, in tristique orci facilisis.</TextBlock>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Nulla et tortor aliquet, interdum turpis id, aliquet sapien. Morbi facilisis dignissim justo, in egestas lorem volutpat ut. Nullam molestie urna id arcu eleifend, quis cursus ante aliquet. Suspendisse euismod nisl augue, ac aliquet sapien viverra non. Fusce condimentum urna eget mauris maximus porta. Suspendisse porta erat iaculis nulla congue, laoreet auctor turpis fermentum. In tempor varius ipsum ac mollis. Nam semper non tellus et ultricies. Vivamus non tellus dui. Maecenas nec tincidunt urna. Praesent varius facilisis dolor nec placerat. Nulla sagittis nisi orci, ac vestibulum ligula euismod at. Quisque placerat, turpis et euismod tincidunt, leo dui pellentesque tellus, ac faucibus mi ipsum sed eros. Praesent magna tellus, malesuada in orci vitae, dignissim aliquam diam. Ut tristique eget augue et dapibus.</TextBlock>
+                    <!-- Timeline -->
+                    <TextBlock Text="A brief history of lorem" FontSize="20" FontWeight="Bold" Foreground="#FF111418" Margin="0,8,0,18"/>
+                    <StackPanel Margin="0,0,0,26">
+                        <Grid>
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="36"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                            <Rectangle Width="2" Fill="#FFE2DDD5" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                            <Ellipse Width="16" Height="16" VerticalAlignment="Top" Margin="0,2,0,0" Fill="White" Stroke="#FFE63946" StrokeThickness="4"/>
+                            <StackPanel Grid.Column="1" Margin="10,0,0,24">
+                                <TextBlock Text="1998" FontSize="13" FontWeight="Bold" Foreground="#FFE63946"/>
+                                <TextBlock Text="Lorem ipsum dolor sit amet" FontSize="17" FontWeight="SemiBold" Foreground="#FF111418" Margin="0,2,0,0" TextWrapping="Wrap"/>
+                                <TextBlock Text="Vivamus bibendum sem ut pulvinar dignissim. Duis sem odio, sollicitudin vitae purus a, dictum egestas diam." FontSize="14" LineHeight="21" Foreground="#FF6B7280" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="36"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                            <Rectangle Width="2" Fill="#FFE2DDD5" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+                            <Ellipse Width="16" Height="16" VerticalAlignment="Top" Margin="0,2,0,0" Fill="White" Stroke="#FFF4A261" StrokeThickness="4"/>
+                            <StackPanel Grid.Column="1" Margin="10,0,0,24">
+                                <TextBlock Text="2004" FontSize="13" FontWeight="Bold" Foreground="#FFF4A261"/>
+                                <TextBlock Text="Consectetur adipiscing elit" FontSize="17" FontWeight="SemiBold" Foreground="#FF111418" Margin="0,2,0,0" TextWrapping="Wrap"/>
+                                <TextBlock Text="Fusce ac facilisis urna. Phasellus volutpat pulvinar cursus." FontSize="14" LineHeight="21" Foreground="#FF6B7280" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="36"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                            <Rectangle Width="2" Fill="#FFE2DDD5" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+                            <Ellipse Width="16" Height="16" VerticalAlignment="Top" Margin="0,2,0,0" Fill="White" Stroke="#FF2A9D8F" StrokeThickness="4"/>
+                            <StackPanel Grid.Column="1" Margin="10,0,0,24">
+                                <TextBlock Text="2011" FontSize="13" FontWeight="Bold" Foreground="#FF2A9D8F"/>
+                                <TextBlock Text="Sed do eiusmod tempor" FontSize="17" FontWeight="SemiBold" Foreground="#FF111418" Margin="0,2,0,0" TextWrapping="Wrap"/>
+                                <TextBlock Text="Nunc iaculis vel purus nec lacinia. Suspendisse dictum pellentesque elit, et vestibulum nibh aliquam at." FontSize="14" LineHeight="21" Foreground="#FF6B7280" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="36"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                            <Rectangle Width="2" Fill="#FFE2DDD5" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+                            <Ellipse Width="16" Height="16" VerticalAlignment="Top" Margin="0,2,0,0" Fill="White" Stroke="#FF457B9D" StrokeThickness="4"/>
+                            <StackPanel Grid.Column="1" Margin="10,0,0,24">
+                                <TextBlock Text="2019" FontSize="13" FontWeight="Bold" Foreground="#FF457B9D"/>
+                                <TextBlock Text="Ut enim ad minim veniam" FontSize="17" FontWeight="SemiBold" Foreground="#FF111418" Margin="0,2,0,0" TextWrapping="Wrap"/>
+                                <TextBlock Text="Proin quis arcu rhoncus, vestibulum velit id, congue lectus. Nam faucibus tincidunt magna consectetur pulvinar." FontSize="14" LineHeight="21" Foreground="#FF6B7280" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="36"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                            <Rectangle Width="2" Fill="#FFE2DDD5" HorizontalAlignment="Center" Margin="0,0,0,30"/>
+                            <Ellipse Width="16" Height="16" VerticalAlignment="Top" Margin="0,2,0,0" Fill="White" Stroke="#FF1D3557" StrokeThickness="4"/>
+                            <StackPanel Grid.Column="1" Margin="10,0,0,24">
+                                <TextBlock Text="2026" FontSize="13" FontWeight="Bold" Foreground="#FF1D3557"/>
+                                <TextBlock Text="Quis nostrud exercitation" FontSize="17" FontWeight="SemiBold" Foreground="#FF111418" Margin="0,2,0,0" TextWrapping="Wrap"/>
+                                <TextBlock Text="Ut ex purus, viverra non ipsum id, tempus placerat justo. Vestibulum nulla felis, posuere nec varius id, euismod vel eros." FontSize="14" LineHeight="21" Foreground="#FF6B7280" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Margin="0,20,0,16">
+                        <Border Width="44" Height="4" CornerRadius="2" HorizontalAlignment="Left">
+                            <Border.Background><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%"><GradientStop Color="#FFE63946" Offset="0"/><GradientStop Color="#FFF4A261" Offset="1"/></LinearGradientBrush></Border.Background>
+                        </Border>
+                        <TextBlock Text="Excepteur sint occaecat cupidatat" FontSize="27" FontWeight="Bold" LineHeight="34" TextWrapping="Wrap" Margin="0,12,0,0" Foreground="#FF111418"/>
+                    </StackPanel>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Nam vitae sagittis nisi, non pellentesque arcu. Nunc feugiat ligula sit amet pellentesque tempus. Suspendisse tincidunt vulputate rhoncus. Proin justo mauris, iaculis eget risus id, venenatis porttitor lacus. Curabitur a consequat purus. Donec aliquam rhoncus egestas. Mauris in erat eget erat aliquam pharetra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Proin dolor mauris, sodales a sollicitudin tincidunt, fringilla vel lacus. In ut risus ac urna tempor imperdiet fringilla id turpis. Nunc in augue ut arcu sollicitudin porttitor. In eu libero pharetra, molestie dui non, semper nulla. Mauris elementum tellus eros, et tincidunt augue suscipit in. Aliquam laoreet felis dolor, et viverra enim tincidunt et. Fusce mattis, turpis varius pellentesque luctus, justo ex rhoncus erat, faucibus elementum ante turpis ac justo.</TextBlock>
+                    <Image Source="/Assets/Images/city.jpg" Stretch="UniformToFill" Height="320" Margin="0,8,0,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="2,10,2,28">
+                        <Path Data="M23,19 A2,2 0 0 1 21,21 L3,21 A2,2 0 0 1 1,19 L1,8 A2,2 0 0 1 3,6 L7,6 L9,3 L15,3 L17,6 L21,6 A2,2 0 0 1 23,8 Z M16,13 A4,4 0 1 1 8,13 A4,4 0 1 1 16,13 Z" Width="14" Height="14" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Top" Margin="0,2,8,0"/>
+                        <TextBlock Text="Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores." FontSize="13" FontStyle="Italic" Foreground="#FF6B7280" TextWrapping="Wrap" MaxWidth="700"/>
+                    </StackPanel>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Maecenas sodales turpis massa, ut interdum eros feugiat nec. Cras augue sapien, sagittis a tempor ut, finibus ac purus. Vivamus vulputate elit sed metus imperdiet pharetra vitae vitae est. Vestibulum urna metus, euismod at interdum id, convallis non magna. Nunc vel purus sed mauris tristique viverra. Sed semper, libero vel dapibus dignissim, felis ligula elementum quam, quis fermentum elit arcu a justo. Nam tristique, nulla id laoreet molestie, ipsum metus placerat tellus, vel imperdiet nunc sem a metus. Pellentesque non semper magna, ut dapibus elit. Suspendisse id finibus augue. Quisque at risus at metus bibendum porta condimentum scelerisque mi. Aliquam porta nisi pulvinar nisi finibus ultricies. Fusce ullamcorper vestibulum magna, eget cursus nibh vehicula quis. Curabitur egestas eros porttitor, accumsan dui eu, dapibus lacus. Nulla et malesuada ex, ac sollicitudin nulla. Maecenas pharetra bibendum lacinia. Donec quis gravida nisl.</TextBlock>
+                    <!-- Highlighted quote -->
+                    <Border CornerRadius="18" Padding="28,30" Margin="0,10,0,32" BoxShadow="0 12 32 0 #3D000000">
+                        <Border.Background><RadialGradientBrush><GradientStop Color="#FF2E5590" Offset="0"/><GradientStop Color="#FF14213D" Offset="1"/></RadialGradientBrush></Border.Background>
+                        <Grid>
+                            <Path Data="M0,20 L0,12 C0,5 4,1 10,0 L11,3 C7,4.5 5.5,7 5.5,10 L10,10 L10,20 Z M14,20 L14,12 C14,5 18,1 24,0 L25,3 C21,4.5 19.5,7 19.5,10 L24,10 L24,20 Z" Fill="#26FFFFFF" Width="90" Height="72" Stretch="Uniform" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <StackPanel>
+                                <TextBlock Text="IN THEIR WORDS" FontSize="12" FontWeight="Bold" Foreground="#FFF4A261"/>
+                                <TextBlock Text="“Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.”" FontSize="23" LineHeight="33" Foreground="White" FontWeight="SemiBold" TextWrapping="Wrap" Margin="0,12,48,0"/>
+                                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                                    <Grid Width="42" Height="42">
+                                        <Ellipse>
+                                            <Ellipse.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FFF4A261" Offset="0"/><GradientStop Color="#FFE63946" Offset="1"/></LinearGradientBrush></Ellipse.Fill>
+                                        </Ellipse>
+                                        <TextBlock Text="QA" FontSize="15" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <StackPanel Margin="12,0,0,0" VerticalAlignment="Center">
+                                        <TextBlock Text="Quintus Aurelius" FontSize="15" FontWeight="Bold" Foreground="White"/>
+                                        <TextBlock Text="Guide, Societas Dolorum" FontSize="13" Foreground="#B3FFFFFF"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Maecenas mauris enim, scelerisque vel libero in, maximus pretium est. Cras eget tortor mauris. Phasellus egestas vel nulla non lacinia. Fusce congue augue in ante sagittis egestas. Aliquam erat volutpat. Suspendisse facilisis sit amet nunc in varius. Aliquam erat volutpat. Fusce ut lorem libero. Proin enim leo, condimentum nec condimentum sit amet, sagittis id lectus. Suspendisse venenatis dui a egestas viverra. Praesent vestibulum vestibulum euismod. Sed sagittis erat sed risus pellentesque, in semper lacus malesuada. In aliquet elementum luctus. Curabitur semper ex rutrum quam blandit, nec consectetur felis elementum.</TextBlock>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis venenatis eleifend augue, sed tincidunt velit iaculis et. Mauris magna purus, ullamcorper a est et, mattis malesuada arcu. In eleifend nulla dignissim lectus iaculis bibendum. Fusce tempus mauris vitae urna commodo tristique. Pellentesque tempor, nibh at ullamcorper placerat, justo nunc iaculis mi, efficitur fermentum lacus leo vitae leo. Nam nec sem ac lorem elementum luctus eu vel lectus. Aliquam gravida iaculis nibh vel ullamcorper. Vestibulum sed quam id quam commodo consectetur. Phasellus malesuada malesuada vehicula.</TextBlock>
+                    <!-- Route map -->
+                    <Border Background="White" CornerRadius="16" Padding="22" Margin="0,10,0,32" BoxShadow="0 6 18 0 #24000000">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="M21,10 C21,17 12,23 12,23 C12,23 3,17 3,10 A9,9 0 0 1 21,10 Z M15,10 A3,3 0 1 1 9,10 A3,3 0 1 1 15,10 Z" Width="20" Height="20" Stretch="Uniform" Stroke="#FFE63946" StrokeThickness="2" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="Iter lorem: the route" FontSize="18" FontWeight="Bold" Foreground="#FF111418" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <TextBlock Text="Four stops, 1,280 km, consectetur adipiscing elit sed do eiusmod tempor." FontSize="13" Foreground="#FF6B7280" Margin="0,4,0,0" TextWrapping="Wrap"/>
+                            <Viewbox Stretch="Uniform" Margin="0,14,0,0">
+                                <Canvas Width="700" Height="320">
+                                    <Rectangle Width="700" Height="320" RadiusX="12" RadiusY="12">
+                                        <Rectangle.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FFE3F1F3" Offset="0"/><GradientStop Color="#FFCFE3EA" Offset="1"/></LinearGradientBrush></Rectangle.Fill>
+                                    </Rectangle>
+                                    <Path Data="M12,0 L320,0 C300,60 340,110 300,160 C260,210 300,260 240,320 L12,320 C5,320 0,315 0,308 L0,12 C0,5 5,0 12,0 Z" Fill="#FFEAF0E2" Stroke="#FFC9D6BA" StrokeThickness="1.5"/>
+                                    <Path Data="M430,40 C500,10 600,30 640,90 C680,150 620,200 560,190 C500,180 470,140 430,120 C400,100 400,60 430,40 Z" Fill="#FFEAF0E2" Stroke="#FFC9D6BA" StrokeThickness="1.5"/>
+                                    <Path Data="M470,250 C520,230 600,240 650,270 C680,290 690,310 688,320 L450,320 C440,290 450,265 470,250 Z" Fill="#FFEAF0E2" Stroke="#FFC9D6BA" StrokeThickness="1.5"/>
+                                    <Path Data="M40,40 C100,30 160,60 200,40 C240,20 270,50 280,80 M30,90 C90,80 150,110 190,95 C230,80 260,110 262,140 M20,150 C70,140 120,170 170,160 C210,150 240,170 245,200 M470,70 C520,50 580,60 610,100 M460,100 C510,90 560,110 590,140" Stroke="#1F2F5233" StrokeThickness="1"/>
+                                    <Path Data="M0,200 C60,190 110,230 160,215 C200,205 230,240 250,270" Stroke="#FF9CC9D6" StrokeThickness="4" StrokeLineCap="Round"/>
+                                    <Path Data="M90,250 C150,200 200,230 250,180 C310,120 380,170 450,110 C510,60 560,120 600,100" Stroke="White" StrokeThickness="8" StrokeLineCap="Round"/>
+                                    <Path Data="M90,250 C150,200 200,230 250,180 C310,120 380,170 450,110 C510,60 560,120 600,100" Stroke="#FFE63946" StrokeThickness="3" StrokeDashArray="3,2" StrokeLineCap="Round"/>
+                                    <Path Data="M21,10 C21,17 12,23 12,23 C12,23 3,17 3,10 A9,9 0 0 1 21,10 Z M15,10 A3,3 0 1 1 9,10 A3,3 0 1 1 15,10 Z" Canvas.Left="77" Canvas.Top="218" Width="26" Height="32" Stretch="Uniform" Fill="#FFE63946" Stroke="White" StrokeThickness="1.5"/>
+                                    <Border Canvas.Left="60" Canvas.Top="258" Width="60" Background="White" CornerRadius="8" Padding="0,4" BoxShadow="0 2 8 0 #1F000000">
+                                        <TextBlock Text="Lorem" FontSize="13" FontWeight="SemiBold" Foreground="#FF111418" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    <Path Data="M21,10 C21,17 12,23 12,23 C12,23 3,17 3,10 A9,9 0 0 1 21,10 Z M15,10 A3,3 0 1 1 9,10 A3,3 0 1 1 15,10 Z" Canvas.Left="237" Canvas.Top="148" Width="26" Height="32" Stretch="Uniform" Fill="#FFE63946" Stroke="White" StrokeThickness="1.5"/>
+                                    <Border Canvas.Left="220" Canvas.Top="188" Width="60" Background="White" CornerRadius="8" Padding="0,4" BoxShadow="0 2 8 0 #1F000000">
+                                        <TextBlock Text="Ipsum" FontSize="13" FontWeight="SemiBold" Foreground="#FF111418" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    <Path Data="M21,10 C21,17 12,23 12,23 C12,23 3,17 3,10 A9,9 0 0 1 21,10 Z M15,10 A3,3 0 1 1 9,10 A3,3 0 1 1 15,10 Z" Canvas.Left="437" Canvas.Top="78" Width="26" Height="32" Stretch="Uniform" Fill="#FFE63946" Stroke="White" StrokeThickness="1.5"/>
+                                    <Border Canvas.Left="420" Canvas.Top="118" Width="60" Background="White" CornerRadius="8" Padding="0,4" BoxShadow="0 2 8 0 #1F000000">
+                                        <TextBlock Text="Dolor" FontSize="13" FontWeight="SemiBold" Foreground="#FF111418" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    <Path Data="M21,10 C21,17 12,23 12,23 C12,23 3,17 3,10 A9,9 0 0 1 21,10 Z M15,10 A3,3 0 1 1 9,10 A3,3 0 1 1 15,10 Z" Canvas.Left="587" Canvas.Top="68" Width="26" Height="32" Stretch="Uniform" Fill="#FFE63946" Stroke="White" StrokeThickness="1.5"/>
+                                    <Border Canvas.Left="570" Canvas.Top="36" Width="60" Background="White" CornerRadius="8" Padding="0,4" BoxShadow="0 2 8 0 #1F000000">
+                                        <TextBlock Text="Amet" FontSize="13" FontWeight="SemiBold" Foreground="#FF111418" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    <Ellipse Canvas.Left="618" Canvas.Top="208" Width="60" Height="60" Fill="#E6FFFFFF" Stroke="#FFE5E1DA" StrokeThickness="1"/>
+                                    <Path Data="M648,214 L655,238 L641,238 Z" Fill="#FFE63946"/>
+                                    <Path Data="M641,238 L655,238 L648,262 Z" Fill="#FF1D3557"/>
+                                    <Rectangle Canvas.Left="30" Canvas.Top="290" Width="40" Height="6" Fill="#FF111418"/>
+                                    <Rectangle Canvas.Left="70" Canvas.Top="290" Width="40" Height="6" Fill="White" Stroke="#FF111418" StrokeThickness="1"/>
+                                    <TextBlock Canvas.Left="116" Canvas.Top="284" Text="50 km" FontSize="12" Foreground="#FF111418"/>
+                                </Canvas>
+                            </Viewbox>
+                        </StackPanel>
+                    </Border>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Etiam eget volutpat nulla, ut commodo eros. Etiam at urna tortor. Fusce porttitor justo lectus. Proin sed diam sed neque suscipit consectetur id et turpis. Integer volutpat mauris ipsum, a ullamcorper est bibendum nec. Aliquam dictum vestibulum diam vitae tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque congue rhoncus urna nec commodo. Nulla sed nibh aliquet, volutpat magna a, suscipit justo. Etiam quis libero accumsan ante venenatis porta. Vestibulum condimentum fermentum faucibus. Proin semper orci id tellus pharetra tempor.</TextBlock>
+                    <StackPanel Margin="0,20,0,16">
+                        <Border Width="44" Height="4" CornerRadius="2" HorizontalAlignment="Left">
+                            <Border.Background><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%"><GradientStop Color="#FFE63946" Offset="0"/><GradientStop Color="#FFF4A261" Offset="1"/></LinearGradientBrush></Border.Background>
+                        </Border>
+                        <TextBlock Text="Sed ut perspiciatis unde omnis" FontSize="27" FontWeight="Bold" LineHeight="34" TextWrapping="Wrap" Margin="0,12,0,0" Foreground="#FF111418"/>
+                    </StackPanel>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Donec quis diam congue, efficitur diam ut, volutpat tortor. Donec aliquam eleifend finibus. Fusce a leo rhoncus, volutpat eros at, pharetra sapien. Sed ut lacinia sem. Cras sollicitudin maximus nibh non malesuada. Vivamus egestas velit venenatis, ultrices odio non, semper eros. Donec ac ex rutrum, accumsan arcu at, dignissim ligula. Praesent mattis augue vel porta tempus. Nunc varius tristique rutrum. Donec id turpis non erat lacinia condimentum. In sed leo non nibh aliquam accumsan. Aenean pretium placerat nulla, vel congue velit vehicula ac. Etiam sem felis, ultricies sed mollis ut, dictum in dui. Morbi fringilla nunc non lacinia posuere. Duis in mi eu lacus faucibus eleifend quis eu orci.</TextBlock>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Quisque et dignissim dolor. Phasellus vitae justo fringilla, varius magna sit amet, ullamcorper risus. Fusce non tellus sit amet justo mattis egestas sed eget eros. In eu tellus lacus. Ut dui nunc, interdum at velit id, ornare pharetra risus. Donec non libero in dolor euismod finibus. Aliquam nibh massa, luctus eu congue eget, scelerisque at turpis. Cras viverra sapien odio, ut vestibulum massa molestie nec. Praesent iaculis, metus at porta aliquet, metus dui finibus odio, quis placerat elit massa eget risus. Duis hendrerit dui ac elit molestie, bibendum suscipit sem bibendum. Nam ut est dapibus, viverra neque at, scelerisque diam. Nulla pharetra dictum augue id venenatis. Praesent finibus ligula in quam aliquam, in porta libero ultrices. Quisque augue massa, condimentum nec molestie sit amet, pulvinar quis dolor. Curabitur tempus lorem malesuada erat dignissim faucibus.</TextBlock>
+                    <Image Source="/Assets/Images/canal.jpg" Stretch="UniformToFill" Height="320" Margin="0,8,0,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="2,10,2,28">
+                        <Path Data="M23,19 A2,2 0 0 1 21,21 L3,21 A2,2 0 0 1 1,19 L1,8 A2,2 0 0 1 3,6 L7,6 L9,3 L15,3 L17,6 L21,6 A2,2 0 0 1 23,8 Z M16,13 A4,4 0 1 1 8,13 A4,4 0 1 1 16,13 Z" Width="14" Height="14" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Top" Margin="0,2,8,0"/>
+                        <TextBlock Text="Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur." FontSize="13" FontStyle="Italic" Foreground="#FF6B7280" TextWrapping="Wrap" MaxWidth="700"/>
+                    </StackPanel>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >Quisque consequat mi ut risus porttitor egestas. Praesent suscipit imperdiet turpis pretium ultrices. Aenean ligula nisi, hendrerit id posuere id, vestibulum ut mauris. Cras varius molestie sem, sit amet pretium tellus congue eget. Pellentesque id fringilla diam, in tincidunt nisi. Aenean interdum lorem risus, vel commodo nisi lobortis id. Aenean eget dapibus nisl, et posuere purus.</TextBlock>
+                    <TextBlock FontSize="17" LineHeight="28" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#FF2B2F36" >In quis felis vel eros lobortis commodo. Vivamus a risus lectus. Vestibulum non nisl interdum, bibendum est ut, lobortis odio. Mauris eu lacus lobortis ligula tristique interdum eu vehicula nibh. Sed sit amet feugiat turpis. Nullam convallis vel nisi quis volutpat. Integer tincidunt dui eget magna tempus, vitae consequat mauris rhoncus. Pellentesque vulputate sem in lectus tempus, quis aliquet velit sodales. Fusce tristique nec arcu sed porta. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam erat volutpat. Duis neque mi, cursus eu lectus in, pharetra dignissim urna. Curabitur commodo libero ut risus ullamcorper mollis.</TextBlock>
+                    <!-- Tags -->
+                    <StackPanel Orientation="Horizontal">
+                        <Border Background="White" BorderBrush="#FFE5E1DA" BorderThickness="1" CornerRadius="16" Padding="12,6" Margin="0,0,8,8">
+                            <TextBlock Text="#lorem" FontSize="13" Foreground="#FF2B2F36"/>
+                        </Border>
+                        <Border Background="White" BorderBrush="#FFE5E1DA" BorderThickness="1" CornerRadius="16" Padding="12,6" Margin="0,0,8,8">
+                            <TextBlock Text="#ipsum" FontSize="13" Foreground="#FF2B2F36"/>
+                        </Border>
+                        <Border Background="White" BorderBrush="#FFE5E1DA" BorderThickness="1" CornerRadius="16" Padding="12,6" Margin="0,0,8,8">
+                            <TextBlock Text="#dolor" FontSize="13" Foreground="#FF2B2F36"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Background="White" BorderBrush="#FFE5E1DA" BorderThickness="1" CornerRadius="16" Padding="12,6" Margin="0,0,8,8">
+                            <TextBlock Text="#consectetur" FontSize="13" Foreground="#FF2B2F36"/>
+                        </Border>
+                        <Border Background="White" BorderBrush="#FFE5E1DA" BorderThickness="1" CornerRadius="16" Padding="12,6" Margin="0,0,8,8">
+                            <TextBlock Text="#adipiscing" FontSize="13" Foreground="#FF2B2F36"/>
+                        </Border>
+                        <Border Background="White" BorderBrush="#FFE5E1DA" BorderThickness="1" CornerRadius="16" Padding="12,6" Margin="0,0,8,8">
+                            <TextBlock Text="#elit" FontSize="13" Foreground="#FF2B2F36"/>
+                        </Border>
+                    </StackPanel>
+                    <!-- Author -->
+                    <Border Background="White" CornerRadius="16" Padding="22" Margin="0,24,0,0" BoxShadow="0 6 18 0 #24000000">
+                        <Grid>
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                            <Border Width="76" Height="76" CornerRadius="38" BorderBrush="#FFF4A261" BorderThickness="3" VerticalAlignment="Top">
+                                <Border.Background><ImageBrush Source="/Assets/Images/author.jpg" Stretch="UniformToFill"/></Border.Background>
+                            </Border>
+                            <StackPanel Grid.Column="1" Margin="18,0,0,0">
+                                <TextBlock Text="ABOUT THE AUTHOR" FontSize="11" FontWeight="Bold" Foreground="#FF6B7280"/>
+                                <TextBlock Text="Lorema Ipsumova" FontSize="20" FontWeight="Bold" Foreground="#FF111418" Margin="0,4,0,0"/>
+                                <TextBlock Text="Quisque ultrices, turpis imperdiet dapibus dictum, urna ipsum faucibus odio, sed elementum justo purus ac risus. Ut ut ligula non nunc egestas pharetra quis nec tellus." FontSize="14" LineHeight="21" Foreground="#FF6B7280" TextWrapping="Wrap" Margin="0,6,0,0"/>
+                                <StackPanel Orientation="Horizontal" Margin="0,14,0,0">
+                                    <Border CornerRadius="18" Padding="18,8">
+                                        <Border.Background><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%"><GradientStop Color="#FFE63946" Offset="0"/><GradientStop Color="#FFF4A261" Offset="1"/></LinearGradientBrush></Border.Background>
+                                        <TextBlock Text="Follow" FontSize="13" FontWeight="Bold" Foreground="White"/>
+                                    </Border>
+                                    <Border Width="36" Height="36" CornerRadius="18" Background="#FFF0ECE6" Margin="10,0,0,0">
+                                        <Path Data="M4,4 L20,4 C21.1,4 22,4.9 22,6 L22,18 C22,19.1 21.1,20 20,20 L4,20 C2.9,20 2,19.1 2,18 L2,6 C2,4.9 2.9,4 4,4 Z M22,6 L12,13 L2,6" Width="16" Height="16" Stretch="Uniform" Stroke="#FF111418" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <Border Width="36" Height="36" CornerRadius="18" Background="#FFF0ECE6" Margin="8,0,0,0">
+                                        <Path Data="M4,11 A9,9 0 0 1 13,20 M4,4 A16,16 0 0 1 20,20 M6,19 A1,1 0 1 1 4,19 A1,1 0 1 1 6,19 Z" Width="16" Height="16" Stretch="Uniform" Stroke="#FF111418" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <!-- Newsletter -->
+                    <Border CornerRadius="18" Padding="26" Margin="0,24,0,0" BoxShadow="0 12 32 0 #3D000000">
+                        <Border.Background><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FF1D3557" Offset="0"/><GradientStop Color="#FF457B9D" Offset="0.55"/><GradientStop Color="#FF2A9D8F" Offset="1"/></LinearGradientBrush></Border.Background>
+                        <Grid>
+                            <Ellipse Width="140" Height="140" HorizontalAlignment="Right" VerticalAlignment="Top" Fill="#14FFFFFF"/>
+                            <Ellipse Width="70" Height="70" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,90,110,0" Fill="#1FFFFFFF"/>
+                            <StackPanel>
+                                <Border Width="48" Height="48" CornerRadius="24" Background="#33FFFFFF" HorizontalAlignment="Left">
+                                    <Path Data="M4,4 L20,4 C21.1,4 22,4.9 22,6 L22,18 C22,19.1 21.1,20 20,20 L4,20 C2.9,20 2,19.1 2,18 L2,6 C2,4.9 2.9,4 4,4 Z M22,6 L12,13 L2,6" Width="24" Height="24" Stretch="Uniform" Stroke="White" StrokeThickness="2" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <TextBlock Text="The Lorem Letter" FontSize="24" FontWeight="Bold" Foreground="White" Margin="0,14,0,0"/>
+                                <TextBlock Text="Donec imperdiet enim vestibulum mauris dignissim, vitae molestie quam iaculis. Pellentesque vitae ex ut magna tempus sodales ut at augue." FontSize="15" LineHeight="23" Foreground="#E6FFFFFF" TextWrapping="Wrap" Margin="0,6,0,0"/>
+                                <Grid Margin="0,18,0,0">
+                                    <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                                    <Border Background="White" CornerRadius="24" Padding="18,12">
+                                        <TextBlock Text="ipsum@lorem.com" FontSize="14" Foreground="#FF9AA1AB"/>
+                                    </Border>
+                                    <Border Grid.Column="1" Background="#FF111418" CornerRadius="24" Padding="20,12" Margin="10,0,0,0">
+                                        <TextBlock Text="Subscribe" FontSize="14" FontWeight="Bold" Foreground="White"/>
+                                    </Border>
+                                </Grid>
+                                <TextBlock Text="No spam. Unsubscribe at any time, dolor sit amet." FontSize="12" Foreground="#B3FFFFFF" Margin="0,10,0,0"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <!-- Related articles -->
+                    <TextBlock Text="More from Lorem" FontSize="24" FontWeight="Bold" Foreground="#FF111418" Margin="0,44,0,16"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="14"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="14"/><RowDefinition Height="Auto"/><RowDefinition Height="14"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+                        <Border Grid.Row="0" Grid.Column="0" Background="White" CornerRadius="14" BoxShadow="0 6 18 0 #24000000">
+                            <StackPanel>
+                                <Border Height="130" CornerRadius="14,14,0,0">
+                                    <Border.Background><ImageBrush Source="/Assets/Images/related1.jpg" Stretch="UniformToFill"/></Border.Background>
+                                </Border>
+                                <StackPanel Margin="14,12,14,14">
+                                    <TextBlock Text="IPSUM" FontSize="11" FontWeight="Bold" Foreground="#FF2A9D8F"/>
+                                    <TextBlock Text="Nemo enim ipsam voluptatem quia voluptas sit aspernatur" FontSize="15" FontWeight="SemiBold" LineHeight="20" Foreground="#FF111418" TextWrapping="Wrap" Margin="0,6,0,0"/>
+                                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                        <Path Data="M22,12 A10,10 0 1 1 2,12 A10,10 0 1 1 22,12 Z M12,6 L12,12 L16,14" Width="13" Height="13" Stretch="Uniform" Stroke="#FF8A929C" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                        <TextBlock Text="6 min read" FontSize="12" Foreground="#FF8A929C" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="0" Grid.Column="2" Background="White" CornerRadius="14" BoxShadow="0 6 18 0 #24000000">
+                            <StackPanel>
+                                <Border Height="130" CornerRadius="14,14,0,0">
+                                    <Border.Background><ImageBrush Source="/Assets/Images/related2.jpg" Stretch="UniformToFill"/></Border.Background>
+                                </Border>
+                                <StackPanel Margin="14,12,14,14">
+                                    <TextBlock Text="DOLOR" FontSize="11" FontWeight="Bold" Foreground="#FF457B9D"/>
+                                    <TextBlock Text="Quis autem vel eum iure reprehenderit qui in ea voluptate" FontSize="15" FontWeight="SemiBold" LineHeight="20" Foreground="#FF111418" TextWrapping="Wrap" Margin="0,6,0,0"/>
+                                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                        <Path Data="M22,12 A10,10 0 1 1 2,12 A10,10 0 1 1 22,12 Z M12,6 L12,12 L16,14" Width="13" Height="13" Stretch="Uniform" Stroke="#FF8A929C" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                        <TextBlock Text="4 min read" FontSize="12" Foreground="#FF8A929C" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="2" Grid.Column="0" Background="White" CornerRadius="14" BoxShadow="0 6 18 0 #24000000">
+                            <StackPanel>
+                                <Border Height="130" CornerRadius="14,14,0,0">
+                                    <Border.Background><ImageBrush Source="/Assets/Images/related3.jpg" Stretch="UniformToFill"/></Border.Background>
+                                </Border>
+                                <StackPanel Margin="14,12,14,14">
+                                    <TextBlock Text="SIT AMET" FontSize="11" FontWeight="Bold" Foreground="#FFF4A261"/>
+                                    <TextBlock Text="At vero eos et accusamus et iusto odio dignissimos" FontSize="15" FontWeight="SemiBold" LineHeight="20" Foreground="#FF111418" TextWrapping="Wrap" Margin="0,6,0,0"/>
+                                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                        <Path Data="M22,12 A10,10 0 1 1 2,12 A10,10 0 1 1 22,12 Z M12,6 L12,12 L16,14" Width="13" Height="13" Stretch="Uniform" Stroke="#FF8A929C" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                        <TextBlock Text="8 min read" FontSize="12" Foreground="#FF8A929C" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="2" Grid.Column="2" Background="White" CornerRadius="14" BoxShadow="0 6 18 0 #24000000">
+                            <StackPanel>
+                                <Border Height="130" CornerRadius="14,14,0,0">
+                                    <Border.Background><ImageBrush Source="/Assets/Images/related4.jpg" Stretch="UniformToFill"/></Border.Background>
+                                </Border>
+                                <StackPanel Margin="14,12,14,14">
+                                    <TextBlock Text="ELIT" FontSize="11" FontWeight="Bold" Foreground="#FFE63946"/>
+                                    <TextBlock Text="Temporibus autem quibusdam et aut officiis debitis" FontSize="15" FontWeight="SemiBold" LineHeight="20" Foreground="#FF111418" TextWrapping="Wrap" Margin="0,6,0,0"/>
+                                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                        <Path Data="M22,12 A10,10 0 1 1 2,12 A10,10 0 1 1 22,12 Z M12,6 L12,12 L16,14" Width="13" Height="13" Stretch="Uniform" Stroke="#FF8A929C" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                        <TextBlock Text="5 min read" FontSize="12" Foreground="#FF8A929C" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="4" Grid.Column="0" Background="White" CornerRadius="14" BoxShadow="0 6 18 0 #24000000">
+                            <StackPanel>
+                                <Border Height="130" CornerRadius="14,14,0,0">
+                                    <Border.Background><ImageBrush Source="/Assets/Images/related5.jpg" Stretch="UniformToFill"/></Border.Background>
+                                </Border>
+                                <StackPanel Margin="14,12,14,14">
+                                    <TextBlock Text="TEMPUS" FontSize="11" FontWeight="Bold" Foreground="#FF1D3557"/>
+                                    <TextBlock Text="Itaque earum rerum hic tenetur a sapiente delectus" FontSize="15" FontWeight="SemiBold" LineHeight="20" Foreground="#FF111418" TextWrapping="Wrap" Margin="0,6,0,0"/>
+                                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                        <Path Data="M22,12 A10,10 0 1 1 2,12 A10,10 0 1 1 22,12 Z M12,6 L12,12 L16,14" Width="13" Height="13" Stretch="Uniform" Stroke="#FF8A929C" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                        <TextBlock Text="3 min read" FontSize="12" Foreground="#FF8A929C" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="4" Grid.Column="2" Background="White" CornerRadius="14" BoxShadow="0 6 18 0 #24000000">
+                            <StackPanel>
+                                <Border Height="130" CornerRadius="14,14,0,0">
+                                    <Border.Background><ImageBrush Source="/Assets/Images/related6.jpg" Stretch="UniformToFill"/></Border.Background>
+                                </Border>
+                                <StackPanel Margin="14,12,14,14">
+                                    <TextBlock Text="AMOR" FontSize="11" FontWeight="Bold" Foreground="#FFE63946"/>
+                                    <TextBlock Text="Nam libero tempore, cum soluta nobis est eligendi optio" FontSize="15" FontWeight="SemiBold" LineHeight="20" Foreground="#FF111418" TextWrapping="Wrap" Margin="0,6,0,0"/>
+                                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                        <Path Data="M22,12 A10,10 0 1 1 2,12 A10,10 0 1 1 22,12 Z M12,6 L12,12 L16,14" Width="13" Height="13" Stretch="Uniform" Stroke="#FF8A929C" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                        <TextBlock Text="7 min read" FontSize="12" Foreground="#FF8A929C" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                    <!-- Comments -->
+                    <StackPanel Orientation="Horizontal" Margin="0,48,0,16">
+                        <TextBlock Text="Comments" FontSize="24" FontWeight="Bold" Foreground="#FF111418" VerticalAlignment="Center"/>
+                        <Border Background="#FFE63946" CornerRadius="11" Padding="9,2" Margin="10,0,0,0" VerticalAlignment="Center">
+                            <TextBlock Text="8" FontSize="13" FontWeight="Bold" Foreground="White"/>
+                        </Border>
+                    </StackPanel>
+                    <Border Background="White" BorderBrush="#FFE5E1DA" BorderThickness="1" CornerRadius="12" Padding="14">
+                        <Grid>
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                            <Ellipse Width="36" Height="36">
+                                <Ellipse.Fill><ImageBrush Source="/Assets/Images/author.jpg" Stretch="UniformToFill"/></Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Grid.Column="1" Text="Add a lorem comment..." FontSize="14" Foreground="#FF9AA1AB" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <Path Data="M22,2 L11,13 M22,2 L15,22 L11,13 L2,9 Z" Width="18" Height="18" Stretch="Uniform" Stroke="#FFE63946" StrokeThickness="2" StrokeLineCap="Round" StrokeJoin="Round" Grid.Column="2" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                    <Grid Margin="0,22,0,0">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <Grid Width="40" Height="40" VerticalAlignment="Top">
+                            <Ellipse>
+                                <Ellipse.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FFE63946" Offset="0"/><GradientStop Color="#FFF4A261" Offset="1"/></LinearGradientBrush></Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Text="MR" FontSize="14" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <StackPanel Grid.Column="1" Margin="12,0,0,0">
+                            <TextBlock FontSize="14" Foreground="#FF111418" TextWrapping="Wrap"><Bold>Marcus Rufus</Bold><Run Foreground="#FF6B7280" Text=" · 2 hours ago"/></TextBlock>
+                            <TextBlock Text="Morbi vel odio id enim malesuada aliquet." FontSize="15" LineHeight="22" Foreground="#FF2B2F36" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                                <Path Data="M20.84,4.61 A5.5,5.5 0 0 0 13.06,4.61 L12,5.67 L10.94,4.61 A5.5,5.5 0 0 0 3.16,12.39 L4.22,13.45 L12,21.23 L19.78,13.45 L20.84,12.39 A5.5,5.5 0 0 0 20.84,4.61 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FFE63946" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center" Fill="#FFE63946"/>
+                                <TextBlock Text="42" FontSize="13" Foreground="#FF6B7280" Margin="6,0,18,0" VerticalAlignment="Center"/>
+                                <Path Data="M21,15 A2,2 0 0 1 19,17 L7,17 L3,21 L3,5 A2,2 0 0 1 5,3 L19,3 A2,2 0 0 1 21,5 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="Reply" FontSize="13" Foreground="#FF6B7280" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Margin="52,22,0,0">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <Grid Width="40" Height="40" VerticalAlignment="Top">
+                            <Ellipse>
+                                <Ellipse.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FF2A9D8F" Offset="0"/><GradientStop Color="#FF457B9D" Offset="1"/></LinearGradientBrush></Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Text="LV" FontSize="14" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <StackPanel Grid.Column="1" Margin="12,0,0,0">
+                            <TextBlock FontSize="14" Foreground="#FF111418" TextWrapping="Wrap"><Bold>Livia Varro</Bold><Run Foreground="#FF6B7280" Text=" · 1 hour ago"/></TextBlock>
+                            <TextBlock Text="Sed ut convallis nunc." FontSize="15" LineHeight="22" Foreground="#FF2B2F36" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                                <Path Data="M20.84,4.61 A5.5,5.5 0 0 0 13.06,4.61 L12,5.67 L10.94,4.61 A5.5,5.5 0 0 0 3.16,12.39 L4.22,13.45 L12,21.23 L19.78,13.45 L20.84,12.39 A5.5,5.5 0 0 0 20.84,4.61 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="17" FontSize="13" Foreground="#FF6B7280" Margin="6,0,18,0" VerticalAlignment="Center"/>
+                                <Path Data="M21,15 A2,2 0 0 1 19,17 L7,17 L3,21 L3,5 A2,2 0 0 1 5,3 L19,3 A2,2 0 0 1 21,5 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="Reply" FontSize="13" Foreground="#FF6B7280" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Margin="0,22,0,0">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <Grid Width="40" Height="40" VerticalAlignment="Top">
+                            <Ellipse>
+                                <Ellipse.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FF1D3557" Offset="0"/><GradientStop Color="#FF457B9D" Offset="1"/></LinearGradientBrush></Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Text="CT" FontSize="14" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <StackPanel Grid.Column="1" Margin="12,0,0,0">
+                            <TextBlock FontSize="14" Foreground="#FF111418" TextWrapping="Wrap"><Bold>Cassius Tullo</Bold><Run Foreground="#FF6B7280" Text=" · 3 hours ago"/></TextBlock>
+                            <TextBlock Text="Proin nec semper dolor. Praesent eget diam elementum, iaculis nisi sed, euismod arcu." FontSize="15" LineHeight="22" Foreground="#FF2B2F36" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                                <Path Data="M20.84,4.61 A5.5,5.5 0 0 0 13.06,4.61 L12,5.67 L10.94,4.61 A5.5,5.5 0 0 0 3.16,12.39 L4.22,13.45 L12,21.23 L19.78,13.45 L20.84,12.39 A5.5,5.5 0 0 0 20.84,4.61 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="8" FontSize="13" Foreground="#FF6B7280" Margin="6,0,18,0" VerticalAlignment="Center"/>
+                                <Path Data="M21,15 A2,2 0 0 1 19,17 L7,17 L3,21 L3,5 A2,2 0 0 1 5,3 L19,3 A2,2 0 0 1 21,5 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="Reply" FontSize="13" Foreground="#FF6B7280" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Margin="0,22,0,0">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <Grid Width="40" Height="40" VerticalAlignment="Top">
+                            <Ellipse>
+                                <Ellipse.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FFF4A261" Offset="0"/><GradientStop Color="#FFE9C46A" Offset="1"/></LinearGradientBrush></Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Text="AF" FontSize="14" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <StackPanel Grid.Column="1" Margin="12,0,0,0">
+                            <TextBlock FontSize="14" Foreground="#FF111418" TextWrapping="Wrap"><Bold>Aurelia Flavia</Bold><Run Foreground="#FF6B7280" Text=" · 5 hours ago"/></TextBlock>
+                            <TextBlock Text="Nam gravida bibendum accumsan." FontSize="15" LineHeight="22" Foreground="#FF2B2F36" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                                <Path Data="M20.84,4.61 A5.5,5.5 0 0 0 13.06,4.61 L12,5.67 L10.94,4.61 A5.5,5.5 0 0 0 3.16,12.39 L4.22,13.45 L12,21.23 L19.78,13.45 L20.84,12.39 A5.5,5.5 0 0 0 20.84,4.61 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FFE63946" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center" Fill="#FFE63946"/>
+                                <TextBlock Text="23" FontSize="13" Foreground="#FF6B7280" Margin="6,0,18,0" VerticalAlignment="Center"/>
+                                <Path Data="M21,15 A2,2 0 0 1 19,17 L7,17 L3,21 L3,5 A2,2 0 0 1 5,3 L19,3 A2,2 0 0 1 21,5 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="Reply" FontSize="13" Foreground="#FF6B7280" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Margin="52,22,0,0">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <Grid Width="40" Height="40" VerticalAlignment="Top">
+                            <Ellipse>
+                                <Ellipse.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FF6D597A" Offset="0"/><GradientStop Color="#FFB56576" Offset="1"/></LinearGradientBrush></Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Text="OP" FontSize="14" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <StackPanel Grid.Column="1" Margin="12,0,0,0">
+                            <TextBlock FontSize="14" Foreground="#FF111418" TextWrapping="Wrap"><Bold>Octavius Pius</Bold><Run Foreground="#FF6B7280" Text=" · 4 hours ago"/></TextBlock>
+                            <TextBlock Text="Sed id eleifend felis. Nunc rhoncus fermentum dapibus." FontSize="15" LineHeight="22" Foreground="#FF2B2F36" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                                <Path Data="M20.84,4.61 A5.5,5.5 0 0 0 13.06,4.61 L12,5.67 L10.94,4.61 A5.5,5.5 0 0 0 3.16,12.39 L4.22,13.45 L12,21.23 L19.78,13.45 L20.84,12.39 A5.5,5.5 0 0 0 20.84,4.61 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="5" FontSize="13" Foreground="#FF6B7280" Margin="6,0,18,0" VerticalAlignment="Center"/>
+                                <Path Data="M21,15 A2,2 0 0 1 19,17 L7,17 L3,21 L3,5 A2,2 0 0 1 5,3 L19,3 A2,2 0 0 1 21,5 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="Reply" FontSize="13" Foreground="#FF6B7280" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Margin="0,22,0,0">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <Grid Width="40" Height="40" VerticalAlignment="Top">
+                            <Ellipse>
+                                <Ellipse.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FF457B9D" Offset="0"/><GradientStop Color="#FFA8DADC" Offset="1"/></LinearGradientBrush></Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Text="JS" FontSize="14" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <StackPanel Grid.Column="1" Margin="12,0,0,0">
+                            <TextBlock FontSize="14" Foreground="#FF111418" TextWrapping="Wrap"><Bold>Julia Severa</Bold><Run Foreground="#FF6B7280" Text=" · Yesterday"/></TextBlock>
+                            <TextBlock Text="Phasellus in diam felis. Donec sodales pellentesque sem quis aliquet." FontSize="15" LineHeight="22" Foreground="#FF2B2F36" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                                <Path Data="M20.84,4.61 A5.5,5.5 0 0 0 13.06,4.61 L12,5.67 L10.94,4.61 A5.5,5.5 0 0 0 3.16,12.39 L4.22,13.45 L12,21.23 L19.78,13.45 L20.84,12.39 A5.5,5.5 0 0 0 20.84,4.61 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="31" FontSize="13" Foreground="#FF6B7280" Margin="6,0,18,0" VerticalAlignment="Center"/>
+                                <Path Data="M21,15 A2,2 0 0 1 19,17 L7,17 L3,21 L3,5 A2,2 0 0 1 5,3 L19,3 A2,2 0 0 1 21,5 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="Reply" FontSize="13" Foreground="#FF6B7280" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Margin="0,22,0,0">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <Grid Width="40" Height="40" VerticalAlignment="Top">
+                            <Ellipse>
+                                <Ellipse.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FF2B9348" Offset="0"/><GradientStop Color="#FF80B918" Offset="1"/></LinearGradientBrush></Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Text="GM" FontSize="14" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <StackPanel Grid.Column="1" Margin="12,0,0,0">
+                            <TextBlock FontSize="14" Foreground="#FF111418" TextWrapping="Wrap"><Bold>Gaius Maximus</Bold><Run Foreground="#FF6B7280" Text=" · Yesterday"/></TextBlock>
+                            <TextBlock Text="Aliquam tempor tempor felis, nec pellentesque mi tristique sed." FontSize="15" LineHeight="22" Foreground="#FF2B2F36" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                                <Path Data="M20.84,4.61 A5.5,5.5 0 0 0 13.06,4.61 L12,5.67 L10.94,4.61 A5.5,5.5 0 0 0 3.16,12.39 L4.22,13.45 L12,21.23 L19.78,13.45 L20.84,12.39 A5.5,5.5 0 0 0 20.84,4.61 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FFE63946" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center" Fill="#FFE63946"/>
+                                <TextBlock Text="12" FontSize="13" Foreground="#FF6B7280" Margin="6,0,18,0" VerticalAlignment="Center"/>
+                                <Path Data="M21,15 A2,2 0 0 1 19,17 L7,17 L3,21 L3,5 A2,2 0 0 1 5,3 L19,3 A2,2 0 0 1 21,5 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="Reply" FontSize="13" Foreground="#FF6B7280" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Margin="0,22,0,0">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <Grid Width="40" Height="40" VerticalAlignment="Top">
+                            <Ellipse>
+                                <Ellipse.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FFE63946" Offset="0"/><GradientStop Color="#FF6D597A" Offset="1"/></LinearGradientBrush></Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Text="PC" FontSize="14" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <StackPanel Grid.Column="1" Margin="12,0,0,0">
+                            <TextBlock FontSize="14" Foreground="#FF111418" TextWrapping="Wrap"><Bold>Plautia Crispa</Bold><Run Foreground="#FF6B7280" Text=" · 2 days ago"/></TextBlock>
+                            <TextBlock Text="Mauris vitae purus sed neque volutpat laoreet porta egestas lacus. Aenean tellus metus, dictum ut vestibulum dignissim, dignissim vel urna." FontSize="15" LineHeight="22" Foreground="#FF2B2F36" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                                <Path Data="M20.84,4.61 A5.5,5.5 0 0 0 13.06,4.61 L12,5.67 L10.94,4.61 A5.5,5.5 0 0 0 3.16,12.39 L4.22,13.45 L12,21.23 L19.78,13.45 L20.84,12.39 A5.5,5.5 0 0 0 20.84,4.61 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="9" FontSize="13" Foreground="#FF6B7280" Margin="6,0,18,0" VerticalAlignment="Center"/>
+                                <Path Data="M21,15 A2,2 0 0 1 19,17 L7,17 L3,21 L3,5 A2,2 0 0 1 5,3 L19,3 A2,2 0 0 1 21,5 Z" Width="15" Height="15" Stretch="Uniform" Stroke="#FF6B7280" StrokeThickness="1.75" StrokeLineCap="Round" StrokeJoin="Round" VerticalAlignment="Center"/>
+                                <TextBlock Text="Reply" FontSize="13" Foreground="#FF6B7280" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <Border BorderBrush="#FFE5E1DA" BorderThickness="1" CornerRadius="22" Padding="12" Margin="0,28,0,0">
+                        <TextBlock Text="Load more comments" FontSize="14" FontWeight="SemiBold" Foreground="#FF2B2F36" HorizontalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+                <!-- Footer -->
+                <Border Background="#FF14171C" Margin="0,56,0,0" Padding="20,36,20,28">
+                    <StackPanel MaxWidth="760">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Grid Width="34" Height="34">
+                                <Ellipse>
+                                    <Ellipse.Fill><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FFE63946" Offset="0"/><GradientStop Color="#FFF4A261" Offset="1"/></LinearGradientBrush></Ellipse.Fill>
+                                </Ellipse>
+                                <Path Data="M12,9 L12,24 L23,24" Stroke="White" StrokeThickness="3.5" StrokeLineCap="Round" StrokeJoin="Round"/>
+                            </Grid>
+                            <TextBlock Text="LOREM" Foreground="White" FontSize="21" FontWeight="Black" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="magazine" Foreground="#FFF4A261" FontSize="21" FontStyle="Italic" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <TextBlock Text="Stories, places and ideas since MMXXVI. Lorem ipsum dolor sit amet, consectetur adipiscing elit." FontSize="14" Foreground="#FF9AA1AB" TextWrapping="Wrap" Margin="0,14,0,0"/>
+                        <Grid Margin="0,28,0,0">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="SECTIONS" FontSize="12" FontWeight="Bold" Foreground="#FFF4A261"/>
+                                <TextBlock Text="Ipsum" FontSize="14" Foreground="#FFC9D1D9" Margin="0,10,0,0"/>
+                                <TextBlock Text="Dolor" FontSize="14" Foreground="#FFC9D1D9" Margin="0,10,0,0"/>
+                                <TextBlock Text="Sit amet" FontSize="14" Foreground="#FFC9D1D9" Margin="0,10,0,0"/>
+                                <TextBlock Text="Elit" FontSize="14" Foreground="#FFC9D1D9" Margin="0,10,0,0"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="COMPANY" FontSize="12" FontWeight="Bold" Foreground="#FFF4A261"/>
+                                <TextBlock Text="About" FontSize="14" Foreground="#FFC9D1D9" Margin="0,10,0,0"/>
+                                <TextBlock Text="Careers" FontSize="14" Foreground="#FFC9D1D9" Margin="0,10,0,0"/>
+                                <TextBlock Text="Press" FontSize="14" Foreground="#FFC9D1D9" Margin="0,10,0,0"/>
+                                <TextBlock Text="Contact" FontSize="14" Foreground="#FFC9D1D9" Margin="0,10,0,0"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="LEGAL" FontSize="12" FontWeight="Bold" Foreground="#FFF4A261"/>
+                                <TextBlock Text="Terms" FontSize="14" Foreground="#FFC9D1D9" Margin="0,10,0,0"/>
+                                <TextBlock Text="Privacy" FontSize="14" Foreground="#FFC9D1D9" Margin="0,10,0,0"/>
+                                <TextBlock Text="Cookies" FontSize="14" Foreground="#FFC9D1D9" Margin="0,10,0,0"/>
+                                <TextBlock Text="Licenses" FontSize="14" Foreground="#FFC9D1D9" Margin="0,10,0,0"/>
+                            </StackPanel>
+                        </Grid>
+                        <StackPanel Orientation="Horizontal" Margin="0,28,0,0">
+                            <Border Width="38" Height="38" CornerRadius="19" BorderBrush="#33FFFFFF" BorderThickness="1" Margin="0,0,10,0">
+                                <Path Data="M4,11 A9,9 0 0 1 13,20 M4,4 A16,16 0 0 1 20,20 M6,19 A1,1 0 1 1 4,19 A1,1 0 1 1 6,19 Z" Width="18" Height="18" Stretch="Uniform" Stroke="White" StrokeThickness="2" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border Width="38" Height="38" CornerRadius="19" BorderBrush="#33FFFFFF" BorderThickness="1" Margin="0,0,10,0">
+                                <Path Data="M23,19 A2,2 0 0 1 21,21 L3,21 A2,2 0 0 1 1,19 L1,8 A2,2 0 0 1 3,6 L7,6 L9,3 L15,3 L17,6 L21,6 A2,2 0 0 1 23,8 Z M16,13 A4,4 0 1 1 8,13 A4,4 0 1 1 16,13 Z" Width="18" Height="18" Stretch="Uniform" Stroke="White" StrokeThickness="2" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border Width="38" Height="38" CornerRadius="19" BorderBrush="#33FFFFFF" BorderThickness="1" Margin="0,0,10,0">
+                                <Path Data="M22.54,6.42 A2.78,2.78 0 0 0 20.6,4.42 C18.88,4 12,4 12,4 C12,4 5.12,4 3.4,4.46 A2.78,2.78 0 0 0 1.46,6.46 A29,29 0 0 0 1,11.75 A29,29 0 0 0 1.46,17.08 A2.78,2.78 0 0 0 3.4,19 C5.12,19.46 12,19.46 12,19.46 C12,19.46 18.88,19.46 20.6,19 A2.78,2.78 0 0 0 22.54,17 A29,29 0 0 0 23,11.75 A29,29 0 0 0 22.54,6.42 Z M9.75,15.02 L15.5,11.75 L9.75,8.48 Z" Width="18" Height="18" Stretch="Uniform" Stroke="White" StrokeThickness="2" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border Width="38" Height="38" CornerRadius="19" BorderBrush="#33FFFFFF" BorderThickness="1" Margin="0,0,10,0">
+                                <Path Data="M4,4 L20,4 C21.1,4 22,4.9 22,6 L22,18 C22,19.1 21.1,20 20,20 L4,20 C2.9,20 2,19.1 2,18 L2,6 C2,4.9 2.9,4 4,4 Z M22,6 L12,13 L2,6" Width="18" Height="18" Stretch="Uniform" Stroke="White" StrokeThickness="2" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border Width="38" Height="38" CornerRadius="19" BorderBrush="#33FFFFFF" BorderThickness="1" Margin="0,0,10,0">
+                                <Path Data="M22,12 A10,10 0 1 1 2,12 A10,10 0 1 1 22,12 Z M2,12 L22,12 M12,2 A15.3,15.3 0 0 1 16,12 A15.3,15.3 0 0 1 12,22 A15.3,15.3 0 0 1 8,12 A15.3,15.3 0 0 1 12,2 Z" Width="18" Height="18" Stretch="Uniform" Stroke="White" StrokeThickness="2" StrokeLineCap="Round" StrokeJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </StackPanel>
+                        <Rectangle Height="1" Fill="#22FFFFFF" Margin="0,24,0,0"/>
+                        <TextBlock Text="© 2026 Lorem Magazine. Dolor sit amet, all rights lorem." FontSize="12" Foreground="#FF6B7280" Margin="0,16,0,0" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
         </ScrollViewer>
     </Grid>
 </UserControl>
